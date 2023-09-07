@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Sản Phẩm</title>
+    <link rel="stylesheet" href="giohang.css">
+</head>
+<body>
+    <header>
+        <h1>Chi Tiết Sản Phẩm</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Giỏ hàng</a></li>
+                <li><a href="#">Đăng xuất</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="product-details">
+            <img src="product.jpg" alt="Sản phẩm">
+            <h2>Tên Sản Phẩm</h2>
+            <p>Mô tả sản phẩm: sạch, ngon.</p>
+            <p>Giá: $5.99</p>
+            <button class="order-btn">Đặt Hàng</button>
+            <button class="add-to-cart-btn">Thêm vào Giỏ Hàng</button>
+            <div class="product-rating">
+                <h3>Đánh Giá Sản Phẩm</h3>
+                <p>Đánh giá trung bình: 4.5/5</p>
+                <form class="rating-form">
+                    <label for="rating">Đánh giá sản phẩm:</label>
+                    <select id="rating" name="rating">
+                        <option value="5">5 sao</option>
+                        <option value="4">4 sao</option>
+                        <option value="3">3 sao</option>
+                        <option value="2">2 sao</option>
+                        <option value="1">1 sao</option>
+                    </select>
+                    <textarea id="review" name="review" placeholder="Viết đánh giá của bạn"></textarea>
+                    <button type="submit">Gửi Đánh Giá</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023</p>
+    </footer>
+</body>
+</html>
