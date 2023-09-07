@@ -1,277 +1,157 @@
-<!doctype html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Giỏ hàng</title>
     <link rel="stylesheet" href="./gio_hang.css" />
   </head>
-  <body>
+  <body bgcolor="#F3FDE8">
     <header>
       <div>
-        <ul class="tieu_de">
-          <li class="khoang_cach">
-            <h3>
-              Ăn sạch sống khỏe<br />
-              <h5><i>Eat Clean Food</i></h5>
-            </h3>
-          </li>
-          <a href="index13.html">
-            <li class="icon1">
-              <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" />
-            </li>
-          </a>
-          <li class="web">
-            <a href="index12.html"> <span>GIỚI THIỆU</span></a>
-          </li>
-          <li>
-            <a href="index12.html"><span>MENU</span></a>
-          </li>
-          <li>
-            <a href="index13.html"> CÔNG CỤ </a>
-          </li>
-          <li>
-            <a href="index13.html"> DỊCH VỤ VẬN CHUYỂN </a>
-          </li>
-          <li>
-            <a href="index13.html"> LIÊN HỆ </a> &nbsp &nbsp &nbsp &nbsp &nbsp
-          </li>
-          <a href="gio_hang.html">
-            <li class="icon2">
-              <img
-                src="https://media.istockphoto.com/id/639811872/vi/vec-to/bi%E1%BB%83u-t%C6%B0%E1%BB%A3ng-gi%E1%BB%8F-h%C3%A0ng.jpg?s=170667a&w=0&k=20&c=-x6Ppwru9ZmRNHRQqEBjA2RR4sow8hhy21OFmA8Vxr0="
-              />
-            </li>
-          </a>
-          <a href="dangnhap.html">
-            <li class="icon2">
-              <img
-                src="https://toppng.com/uploads/preview/black-and-white-stockportable-network-account-icon-11553436383dwuayhjyvo.png"
-              />
-            </li>
-          </a>
-          <div>
-            <form method="get">
-              <input
-                class="tim_kiem"
-                type="text"
-                name="sanpham"
-                value=""
-                placeholder="Search..."
-              />
-              <button>
-                <img
-                  class="icon3"
-                  src="https://cdn-icons-png.flaticon.com/512/954/954591.png"
-                />
-              </button>
-            </form>
-          </div>
-          <br />
-        </ul>
+        <h1>Thông tin giỏ hàng</h1>
       </div>
     </header>
-    <nav>
-      <div>
-        <h2 class="font-family"><b>Thông tin giỏ hàng</b><br />_______</h2>
+    <nav></nav>
+    <section class="cart">
+      <div class="container">
+        <div class="cart-top-wrap">
+          <div class="cart-top">
+            <div class="cart-top-cart cart-top-item">
+              <img
+                src="https://www.freeiconspng.com/thumbs/cart-icon/basket-cart-icon-27.png"
+              />
+            </div>
+            <div class="cart-top-adress cart-top-item">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3082/3082383.png"
+              />
+            </div>
+            <div class="cart-top-payment cart-top-item">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/4305/4305512.png"
+              />
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="voucher">
-        <table border="0">
-          <tr>
-            <td>
-              <div class="voucher">
-                <img src="https://mgg.vn/s/cat/tong-hop.png" />
-              </div>
-            </td>
-            <td>
-              <div class="voucher">
-                <p><i>
-                  Nhấn vào mục Mã giảm giá ở cuối trang để hưởng miễn phí vận
-                  chuyển bạn nhé<i>
-                </p>
-              </div>
-            </td>
-          </tr>
-        </table>
-      </div>
-    </nav>
-    <br /><br />
-    <section>
-      <div>
-        <table border="1" class="bang">
-          <tr>
-            <th bgcolor="#D8B4F8" class="stt">STT</th>
-            <th bgcolor="#D8B4F8" class="anh">Image</th>
-            <th bgcolor="#D8B4F8" class="name">Name</th>
-            <th bgcolor="#D8B4F8" class="stt">Quantity</th>
-            <th bgcolor="#D8B4F8">Price</th>
-            <th bgcolor="#D8B4F8" class="xoa">Action</th>
-          </tr>
-          <tr>
-            <td>&nbsp &nbsp</td>
-            <td>
-              <div>
-                <form method="get">
-                  <input name="chon" type="checkbox" value="" />
-                </form>
-              </div>
-            </td>
-            <td>&nbsp &nbsp</td>
-            <td>
-              <div class="buttons_added">
-                <input class="minus is-form" type="button" value="-" />
-                <input
-                  aria-label="quantity"
-                  class="input-qty"
-                  max="Số tối đa"
-                  min="Số tối thiểu"
-                  name=""
-                  type="number"
-                  value=""
-                />
-                <input class="plus is-form" type="button" value="+" />
-              </div>
-            </td>
-            <td>&nbsp &nbsp</td>
-            <td>
-              <div>
-                <form method="delete">
-                  <button>
-                    <img
-                      class="action"
-                      src="https://icon-library.com/images/delete-icon/delete-icon-14.jpg"
-                    />
-                  </button>
-                </form>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>&nbsp &nbsp</td>
-            <td>
-              <div>
-                <form method="get">
-                  <input name="chon" type="checkbox" value="" />
-                </form>
-              </div>
-            </td>
-            <td>&nbsp &nbsp</td>
-            <td>
-              <div class="buttons_added">
-                <input class="minus is-form" type="button" value="-" />
-                <input
-                  aria-label="quantity"
-                  class="input-qty"
-                  max="Số tối đa"
-                  min="Số tối thiểu"
-                  name=""
-                  type="number"
-                  value=""
-                />
-                <input class="plus is-form" type="button" value="+" />
-              </div>
-            </td>
-            <td>&nbsp &nbsp</td>
-            <td>
-              <div>
-                <form method="delete">
-                  <button>
-                    <img
-                      class="action"
-                      src="https://icon-library.com/images/delete-icon/delete-icon-14.jpg"
-                    />
-                  </button>
-                </form>
-              </div>
-            </td>
-          </tr>
-        </table>
+      <div class="container">
+        <div class="cart-content row">
+          <div class="cart-content-left">
+            <table>
+              <tr>
+                <th>STT</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+              <tr>
+                <td>
+                  <p>1</p>
+                </td>
+                <td>
+                  <img
+                    src="https://beptruong.edu.vn/wp-content/uploads/2016/10/salad-ca-hoi.jpg"
+                  />
+                </td>
+                <td>
+                  <p>Salad</p>
+                </td>
+                <td>
+                  <input type="number" value="1" min="1" />
+                </td>
+                <td>
+                  <p>200.000<sup>đ</sup></p>
+                </td>
+                <td>
+                  <div>
+                    <form method="delete">
+                      <button>
+                        <img
+                          class="action"
+                          src="https://icon-library.com/images/delete-icon/delete-icon-14.jpg"
+                        />
+                      </button>
+                    </form>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>2</p>
+                </td>
+                <td>
+                  <img
+                    src="https://media.vneconomy.vn/images/upload/2021/04/21/vi-du-thuc-don-eatclean-1539242369403795769945.jpg"
+                  />
+                </td>
+                <td>
+                  <p>Salad cá hồi, gạo nứt</p>
+                </td>
+                <td>
+                  <input type="number" value="1" min="1" />
+                </td>
+                <td>
+                  <p>250.000<sup>đ</sup></p>
+                </td>
+                <td>
+                  <div>
+                    <form method="delete">
+                      <button>
+                        <img
+                          class="action"
+                          src="https://icon-library.com/images/delete-icon/delete-icon-14.jpg"
+                        />
+                      </button>
+                    </form>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="cart-content-right">
+            <table>
+              <tr class="1">
+                <th colspan="2">TỔNG TIỀN GIỎ HÀNG</th>
+              </tr>
+              <tr class="2">
+                <td>TỔNG SẢN PHẨM</td>
+                <td>2</td>
+              </tr>
+              <tr class="3">
+                <td>TỔNG TIỀN HÀNG</td>
+                <td>400.000<sub>đ</sub></td>
+              </tr>
+              <tr class="4">
+                <td>THÀNH TIỀN</td>
+                <td>400.000<sub>đ</sub></td>
+              </tr>
+              <tr class="5">
+                <td>TẠM TÍNH</td>
+                <td>400.000<sub>đ</sub></td>
+              </tr>
+            </table>
+            <div class="cart-content-right-text">
+              <p>
+                Bạn sẽ được miễn phí ship khi đơn hàng của bạn có tổng giá trị
+                trên 1.000.000 <sub>đ</sub>
+              </p>
+            </div>
+            <div class="cart-content-right-button">
+              <button>Tiếp tục mua</button>
+              <button>Thanh toán</button>
+            </div>
+            <div class="cart-content-right-dangnhap">
+              <p>Tài khoản</p>
+              <p>
+                Hãy <a href="">đăng nhập</a> tài khoản của bạn để tích điểm
+                thành viên
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
-    <br><br>
-    <br><br>
-
-    <article>
-      <div>
-        <table class="voucher1">
-          <thead>
-          <tr class="1">
-            <td>
-              <div>
-                <p>Voucher</p>
-              </div>
-            </td>
-            <td>
-              <div class="voucher1">
-                <img src="https://mgg.vn/s/cat/tong-hop.png">
-              </div>
-            </td>
-            <td>&nbsp &nbsp &nbsp &nbsp</td>
-            <td>
-              <div class="voucher1">
-                <a href="voucher.html"><i>Chọn hoặc nhập mã</i></a>
-              </div>
-            </td>
-          </tr>
-          <tr class="2">
-            <td rowspan="2"> 
-              <div class="money">Tổng thanh toán: </div>
-              <div class="sum_money">đ0 &nbsp &nbsp &nbsp</div>
-            </td>
-          </tr>
-          <tr class="3">
-            <td rowspan="2">
-              <button class="shopee-button-solid  shopee-button-solid--primary">
-                <span class="TTXpRG"><b>Đặt hàng</b></span>
-              </button>
-            </td> 
-          </tr>
-        </thead>
-        </table>
-      </div>
-    </article>
-
-    <br /><br />
-    <br /><br />
-
-    <aside>
-
-      
-    </aside>
-
-    
-    <br /><br />
-    <br /><br />
-    <hr />
-    <footer>
-      <table border="0" class="cuoi">
-        <tr>
-          <th>
-            &nbsp &nbsp &nbsp &nbsp About &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-          </th>
-          <th>Contact Us</th>
-          <th>Follow Us</th>
-        </tr>
-        <tr>
-          <td>&nbsp &nbsp</td>
-          <td>
-            <ul>
-              <li>Phone: 0935877188</li>
-              <li>Email: hihihi@eatCleanFood.com</li>
-              <li>Address: 123 hihihi Street, hihihi City, Vietnam</li>
-            </ul>
-          </td>
-          <td>
-            <ul>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Google Plus</a></li>
-            </ul>
-          </td>
-        </tr>
-      </table>
-    </footer>
+    <article></article>
+    <footer></footer>
   </body>
 </html>

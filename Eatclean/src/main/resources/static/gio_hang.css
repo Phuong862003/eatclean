@@ -1,273 +1,213 @@
-.font-family {
-    font-family: Verdana;
-    font-weight: lighter;
-    color: rgb(3, 112, 3);
-    text-align: center;
-  }
-
-  .img1 {
-    width: 100%;
-    height: 500px;
-  }
-  .home {
-    font-family: Helvetica;
-    color: black;
-    font-size: 20px;
-    background-color: rgb(255, 255, 255);
-    background-size: 100px 100px;
-  }
-  .home a {
-    text-decoration: none;
-  }
-  .home i {
-    color: #9e9fa5;
-  }
-
-  .tieu_de {
-    background: radial-gradient( #F3FDE8, #CEDEBD, #9EB384, #96C291);
-    list-style-type: none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    border-radius: 30px/80px;
-  }
-  .tieu_de li {
-    display: inline-block;
-    font-size: 20px;
-    padding: 20px;
-  }
-  .tieu_de a {
-    text-decoration: none;
-  }
-
-  .nav a {
-    color: black;
-  }
-
-  .tieu_de a {
-    color: black;
-  }
-  .icon1 img {
-    width: 45px;
-    height: 45px;
-  }
-  .icon2 img {
-    width: 45px;
-    height: 45px;
-  }
-  .khoang_cach h5 {
-    font-family: Verdana;
-    font-weight: lighter;
-    text-shadow: 3px 3px 2px #CCEEBC;
-  }
-  .khoang_cach {
-    line-height: 0.1;
-    color:rgb(4, 59, 63);
-  }
-  .khoang_cach h3 {
-    font-family: Courier;
-    font-size: 30px;
-    text-shadow: 3px 3px 2px #CCEEBC;
-  }
-
-  .bang{
-    font-family: Arial, Helvetica, sans-serif;
-    background: radial-gradient(#FFE5E5, #FFBFBF);
-    width: 1000px;
-    height: 25px;
-    margin: 0 auto;
-
-  }
-
-  .tim_kiem{
-    background-color: azure;
-    width: 400px;
-    height: 30px;
-    margin: 0 auto;
-    font-weight: lighter;
-  }
-
-  .icon3{
-    width: 30px;
-    height: 30px;
-    font-weight: lighter black;
-  }
-
-  .stt{
-    width: 10px;
-  }
-
-  .xoa{
-    width: 15px;
-  }
-
-  .action{
-    width: 25px;
-    height: 25px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-  }
-
-  .anh{
-    width: 300px;
-  }
-
-  .name{
-    width: 200px;
-  }
-
-  .cuoi{
-    background: #CEDEBD;
-    width: 100%;
-    height: 50px;
-    text-align: left;
-  }
-  
-  .buttons_added {
-    opacity:1;
-    display:inline-block;
-    display:-ms-inline-flexbox;
-    display:inline-flex;
-    white-space:nowrap;
-    vertical-align:top;
+header{
+  font-family: Verdana;
+  font-weight: lighter;
+  text-shadow: 3px 3px 2px #AED2FF;
+  text-align: center;
+  color: #053B50;
 }
-.is-form {
-    overflow:hidden;
-    position:relative;
-    background-color:#f9f9f9;
-    height:2.2rem;
-    width:1.9rem;
-    padding:0;
-    text-shadow:1px 1px 1px #fff;
-    border:1px solid #ddd;
+
+.cart{
+  padding: 100px 0;
+
 }
-.is-form:focus,.input-text:focus {
-    outline:none;
+
+.cart-top-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.is-form.minus {
-    border-radius:4px 0 0 4px;
+
+.cart-top{
+  height: 2px;
+  width: 70%;
+  background-color: #dddddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 0 100px;
 }
-.is-form.plus {
-    border-radius:0 4px 4px 0;
+
+.cart-top-item{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #9EB384;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
 }
-.input-qty {
-    background-color:#fff;
-    height:2.2rem;
-    text-align:center;
-    font-size:1rem;
-    display:inline-block;
-    vertical-align:top;
-    margin:0;
-    border-top:1px solid #ddd;
-    border-bottom:1px solid #ddd;
-    border-left:0;
-    border-right:0;
-    padding:0;
+
+.cart-top-item img {
+  color: #dddddd;
+  width: 30px;
+  height: 30px;
 }
-.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
-    -webkit-appearance:none;
-    margin:0;
+
+.cart-top-cart{
+  border: 1px solid #0DB7EA;
 }
-  
-  .voucher{
-    border: solid #C8FFE0;
-    font-size: 15px;
-  }
 
-  .voucher img{
-    width: 35px;
-    height: 35px;
-  }
+.cart-top-cart i {
+  color:#0DB7EA;
+}
 
-  .voucher i{
-    color: dimgrey;
-  }
+.cart-content-left{
+  float: left;
+  flex: 2;
+  padding-right: 12px;
+  width: 900px;
+}
 
-  .voucher1{
-    float: right;
-    right: 0px;
-    border: 1px solid #C8FFE0;
-    text-decoration: none;
-  }
+.cart-content-left table {
+  width: 100%;
+  text-align: center;
+}
 
-  
-  .voucher1 img{
-    width: 35px;
-    height: 35px;
-  }
+.cart-content-left table th{
+  padding-bottom: 30px;
+  font-family: var(--main-text-font);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #333;
+  border-collapse: collapse;
+  border-bottom: 2px solid #9EB384;
+}
 
-  .voucher1 i{
-    font-family: Helvetica;
-    color: #313866;
-    text-decoration: none;
-  }
+.cart-content-left table p {
+  font-size:  12px;
+  font-family: var(--main-text-font);
+  color: #333;
+}
 
-  .btn{
-    background: #e63535;
-    float: right;
-    right: 0em;
-    font-size: 20px;
-  }
+.cart-content-left table input {
+  width: 30px;
+}
 
-  .money{
-    font-size: 20px;
-    color: black;
-    line-height: 20px;
-    float: left;
-    text-align: center;
-  }
+.cart-content-left table{
+  padding: 20px 0;
+  border-bottom: 2px solid #9EB384;
+}
 
-  .sum_money{
-    font-size: 20px;
-    line-height: 28px;
-    margin-left: 5px;
-    color: red;
-    float: left;text-align: center;
-  }
+.cart-content-left td:first-child{
+  width: 5px;
+}
 
-  .rnocow {
-    z-index: 2;
-    position: -webkit-sticky;
-    position: sticky;
-    bottom: 0;
-  }
+.cart-content-left td:nth-child(2) img {
+  max-width: 130px;
+}
 
-  .rnocow {
-    display: grid;
-    grid-template-columns: 1fr 20.3125rem 11.875rem;
-    align-items: center;
-    box-sizing: border-box;
-    background: #fff;
-    width: 100%;
-    flex: 1;
-    font-size: 1rem;
-    position: relative;
-    margin-top: .75rem;
-  }
+.cart-content-right{
+  float: left;
+  width: 500px;
+  flex: 1px;
+  padding-left: 12px;
+  border-left: 2px solid #9EB384;
+}
 
-  .rnocow .shopee-button-solid {
-    padding: 13px 36px;
-    margin: 0 22px 0 15px;
-    text-transform: capitalize;
-    font-weight:300;
-    height: 2.5rem;
-    box-sizing: border-box;
-    font-size: .875rem;
-    border-radius: 2px;
-    width: 13.125rem;
-  }
+.cart-content-right table{
+  width: 100%;
+}
 
-  .shopee-button-solid--primary {
-    position: relative;
-    overflow: visible;
-    outline: 0px;
-    background: rgb(238, 77, 45);
-  }
+.cart-content-right table th {
+  padding-bottom: 30px;
+  font-size:  12px;
+  font-family: var(--main-text-font);
+  color: #333;
+  border-collapse: collapse;
+  border-bottom: 2px solid #9EB384;
+}
 
-  .TTXpRG {
-    width: 100%;
-  }
-  
+.cart-content-right table td{
+  font-size:  12px;
+  font-family: var(--main-text-font);
+  color: #333;
+  padding: 6px 0;
+}
+
+.cart-content-right tr:nth-child(4) td{
+  border-bottom: 2px solid #9EB384;
+}
+
+.cart-content-right tr td:last-child{
+  text-align: right;
+}
+
+.cart-content-right-text{
+  margin: 20px 0;
+  text-align: center;
+}
+
+.cart-content-right-text p{
+  font-size:  12px;
+  font-family: var(--main-text-font);
+  color: #333;
+}
+
+.cart-content-right-button{
+  text-align: center;
+  align-items: center;
+}
+
+.cart-content-right-button button{
+  padding: 0 18px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.cart-content-right-button button:first-child{
+  background-color: #fff;
+  border: 1px solid black;
+  margin-right: 20px;
+}
+
+.cart-content-right-button button:first-child:hover{
+  background-color: #ddd;
+}
+
+.cart-content-right-button button:last-child{
+  background-color: black;
+  color: #fff;
+  border: none;
+  border: 1px solid black;
+}
+
+.cart-content-right-button button:last-child:hover{
+  background-color: #dddddd;
+  color: black;
+}
+
+.cart-content-right-dangnhap{
+  margin-top: 20px;
+}
+
+.cart-content-right-dangnhap p{
+  font-size:  12px;
+  font-family: var(--main-text-font);
+  color: #333;
+}
+
+.action{
+  width: 25px;
+  height: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.cart-content-right table th{
+  color: #053B50;
+  font-size: 15px;
+}
+
+.cart-content-left table th{
+  color: #053B50;
+  font-size: 15px;
+}
+
+.cart-content-left tr:nth-child(2) td{
+  border-bottom: 2px solid #9EB384;
+  padding-bottom: 30px;
+}
 
