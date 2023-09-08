@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thống kê Doanh thu</title>
+    <link rel="stylesheet" type="text/css" href="../static/thongke.css">
+</head>
+<body>
+    <header>
+        <h1>Thống kê Doanh thu Đơn hàng trong tháng</h1>
+    </header>
+
+    <main>
+        <div class="chart-container">
+            <canvas id="revenueChart"></canvas>
+        </div>
+        <table>
+            <tr>
+                <th>Ngày</th>
+                <th>Số lượng Đơn hàng</th>
+                <th>Tổng doanh thu</th>
+            </tr>
+            <tr>
+                <td>01/09/2023</td>
+                <td>10</td>
+                <td>$1000</td>
+            </tr>
+            <tr>
+                <td>02/09/2023</td>
+                <td>8</td>
+                <td>$800</td>
+            </tr>
+            <!-- Thêm thêm hàng nếu cần với dữ liệu tương ứng -->
+        </table>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('revenueChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['01/09', '02/09', '03/09', '04/09', '05/09'], // Thay thế bằng nhãn ngày tháng của bạn
+                datasets: [{
+                    label: 'Doanh thu',
+                    data: [1000, 800, 1200, 900, 1500], // Thay thế bằng dữ liệu của bạn
+                    backgroundColor: 'rgba(0, 123, 255, 0.5)', // Thay thế bằng màu bạn muốn
+                    borderColor: 'rgba(0, 123, 255, 1)', // Thay thế bằng màu bạn muốn
+                    borderWidth: 2,
+                    pointRadius: 5,
+                    pointBackgroundColor: 'rgba(0, 123, 255, 1)', // Thay thế bằng màu bạn muốn
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value, index, values) {
+                                return '$' + value;
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

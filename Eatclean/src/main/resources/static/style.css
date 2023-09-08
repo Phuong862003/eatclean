@@ -15,8 +15,10 @@ body{
     align-items: center;
     justify-content: center;
     
-    background-size: cover;background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://st4.depositphotos.com/4746607/20177/i/1600/depositphotos_201775236-stock-photo-healthy-food-clean-eating-selection.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://ik.imagekit.io/rezeve/cms/images/blog-posts/936a3010-02e1-4f90-a604-09619d81c9c2~Frame%2048096462.jpg');
+    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .container{
