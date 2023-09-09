@@ -1,4 +1,4 @@
-
+/*
 header{
   font-family: Verdana;
   font-weight: lighter;
@@ -6,6 +6,7 @@ header{
   text-align: center;
   color: #053B50;
 }
+*/
 
 
 /* Header */
@@ -37,24 +38,13 @@ padding: 6px;
 margin-top: 8px;
 /* margin-right: 16px; */
 border: none;
-font-size: 27px;
-width: 600px;
-}
-.topnav button {
-
-/* float: left; */
-width: 50px;
-padding: 15px;
-background:#435334;
-color: white;
-font-size: 17px;
-border: 1px solid grey;
-border-left: none; /* Prevent double borders */
-cursor: pointer;
+font-size: 25px;
+width: 400px;
 }
 
-.topnav button:hover {
-background:#435334;
+.topnav img{
+  width: 25px;
+  height: 30px;
 }
 
 /* Clear floats */
@@ -64,8 +54,48 @@ clear: both;
 display: table;
 }
 
+.topnav li{
+  float: left;
+  padding-inline: 20px;
+}
+
+.tieu_de {
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border-radius: 30px/80px;
+}
+.tieu_de li {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.tieu_de span{
+  color: white;
+  text-decoration: none;
+}
+
+.web a {
+  text-decoration: none;
+}
+
+.icon2 img {
+  width: 45px;
+  height: 45px;
+}
+
+.font{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #313866;
+  text-align: center;
+  text-shadow:0 0 3px #0DB7EA;
+  font-size: 20px;
+}
+
 .cart{
-  padding: 100px 0;
+  padding: 50px 0;
 
 }
 
@@ -267,5 +297,60 @@ display: table;
 .cart-content-left tr:nth-child(2) td{
   border-bottom: 2px solid #9EB384;
   padding-bottom: 30px;
+}
+
+.product b{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #5C5470;
+  font-size: 20px;
+}
+.product table img{
+  width: 200px;
+  height: 200px;
+}
+
+.soluong{
+  font-size: 10px;
+  text-align: right;
+  color: #435334;
+}
+
+.product-left{
+  float: left;
+  margin-left: 20px;
+  padding-inline: 20px;
+}
+
+.product-right{
+  float: left;
+  padding-inline: 20px;
+}
+
+.product table td{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #5C5470;
+  font-size: 15px;
+}
+
+.product-right-left{
+  float: left;
+  padding-inline: 20px;
+}
+
+.product-right-left-right{
+  float: left;
+  padding-inline: 20px;
+}
+
+.product-right-left-right1{
+  float:left;
+  padding-inline: 20px;
+}
+
+.cuoi{
+  background: #AAC8A7;
+  width: 100%;
+  height: 50px;
+  text-align: left;
 }
 
