@@ -84,13 +84,15 @@ nav ul li a {
     text-decoration: none;
     padding: 10px;
     text-align: center;
-    {% comment %} border: 3px solid #fff; {% endcomment %}
     font-family: 'Courier New', Courier, monospace;
     
 
 
 }
-
+nav ul li a.active {
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.2); /* Dimmed background color */
+}
 /* Hero Section */
 .hero {
     background-image: url("background.jpg");
@@ -284,15 +286,16 @@ footer {
             <button type="submit"><i class="fa fa-search"></i></button>
             
           </div>
-        <nav>
+          <nav>
             <ul>
-                <li><a href="#"><b>Trang Chủ</b></a></li>
-                <li><a href="#"><b>Giới thiệu</b></a></li>
-                <li><a href="#"><b>Thực đơn</b></a></li>
-                <li><a href="#"><b>Liên Hệ</b></a></li>
-                <li><a href="#"><b>Đăng nhập</b></a></li>
+                <li><a href="home.html" class="active"><b>Trang Chủ</b></a></li>
+                <li><a href="gioi-thieu.html"><b>Giới Thiệu</b></a></li>
+                <li><a href="thuc-don.html"><b>Thực Đơn</b></a></li>
+                <li><a href="lien-he.html"><b>Liên Hệ</b></a></li>
+                <li><a href="dang-nhap.html"><b>Đăng Nhập</b></a></li>
             </ul>
         </nav>
+        
     </header>
 
     <section class="hero">
