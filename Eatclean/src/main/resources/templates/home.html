@@ -3,7 +3,7 @@
 <head>
     <title>LitiFood</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{https://use.fontawesome.com/releases/v5.7.2/css/all.css}" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <style>
     /* Reset CSS */
@@ -84,7 +84,7 @@ nav ul li a {
     text-decoration: none;
     padding: 10px;
     text-align: center;
-    {% comment %} border: 3px solid #fff; {% endcomment %}
+    border: 3px solid #fff; 
     font-family: 'Courier New', Courier, monospace;
     
 
@@ -277,7 +277,7 @@ footer {
 <body>
     <header>
         <div class="logo">
-            <img src="../static/img/home/logoPage.png" alt="Logo">
+            <a href="/" ><img th:src="@{/static/img/home/logoPage.png}" alt="Logo"></a>
         </div>
         <div class="topnav">   
             <input type="text" placeholder="Tìm kiếm..."/>
@@ -286,11 +286,11 @@ footer {
           </div>
         <nav>
             <ul>
-                <li><a href="#"><b>Trang Chủ</b></a></li>
+                <!-- <li><a href="#"><b>Trang Chủ</b></a></li> -->
                 <li><a href="#"><b>Giới thiệu</b></a></li>
                 <li><a href="#"><b>Thực đơn</b></a></li>
                 <li><a href="#"><b>Liên Hệ</b></a></li>
-                <li><a href="#"><b>Đăng nhập</b></a></li>
+                <li><a href="login"><b>Đăng nhập</b></a></li>
             </ul>
         </nav>
     </header>
