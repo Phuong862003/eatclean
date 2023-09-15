@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width,
     initial-scale=1">
     <title>Login </title>
-    <link rel="stylesheet" type="text/css"  href="../static/style.css">
+    <link rel="stylesheet" type="text/css"  th:href="@{/static/css/style.css}">
     <link rel="stylesheet"
-     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+     th:href="@{https://unpkg.com/boxicons@latest/css/boxicons.min.css}">
+     <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+      <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+      <link th:href="@{https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap}" rel="stylesheet">
   </head>
   <body>
     <div class="container">
       <div class="main-box">
         <h1>Login</h1>
-        <form action="">
+        <form id="login-form" action="#" th:action="@{/login}" th:object="${user}" method="post">
           <div class="input-box">
             <span class="icon"><i class='bx bxs-user-account'></i></span>
             <input type="text" name="username" required>

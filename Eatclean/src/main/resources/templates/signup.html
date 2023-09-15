@@ -16,16 +16,21 @@
     <div class="container">
       <div class="main-box">
         <h1>Register</h1>
-        <form action="">
+        <form th:action="@{/signup}" th:object="${user}" method="post">
           <div class="input-box">
             <span class="icon"><i class='bx bxs-user-account'></i></span>
-            <input type="text" name="username" required>
-            <label>Usename</label>
+            <input type="text" th:field="*{name}" name="name" required>
+            <label>Name</label>
           </div>
           <div class="input-box">
             <span class="icon"><i class='bx bxs-envelope'></i></span>
-            <input type="email" name="email" required>
+            <input type="email" th:field="*{email}" name="email" required>
             <label>Email</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"><i class='bx bxs-user-account'></i></span>
+            <input type="text" th:field="*{username}" name="username" required>
+            <label>Usename</label>
           </div>
           <div class="input-box">
             <span class="icon"><i class='bx bxs-lock-alt'></i></span>

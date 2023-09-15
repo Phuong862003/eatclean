@@ -3,6 +3,7 @@
   <head>
     <title>LitiFood</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
+<<<<<<< HEAD
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -11,6 +12,11 @@
     />
   </head>
   <style>
+=======
+    <link rel="stylesheet" th:href="@{https://use.fontawesome.com/releases/v5.7.2/css/all.css}" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<style>
+>>>>>>> e3a955f365799a2450be0ad43fd2d253f5972b6d
     /* Reset CSS */
     body {
       font-family: Arial, sans-serif;
@@ -102,7 +108,21 @@
       margin: 0 auto;
     }
 
+<<<<<<< HEAD
     /* Menu Section */
+=======
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+<<<<<<< HEAD
+    border: 3px solid #fff; 
+=======
+>>>>>>> f53d1d098e893eccbf7068e1994fd0c80c0ab516
+    font-family: 'Courier New', Courier, monospace;
+    
+>>>>>>> e3a955f365799a2450be0ad43fd2d253f5972b6d
 
     section.menu {
       text-align: center;
@@ -111,6 +131,7 @@
       position: relative;
     }
 
+<<<<<<< HEAD
     section.menu h2 {
       margin-bottom: 30px;
       font-size: 32px;
@@ -123,6 +144,22 @@
       flex-wrap: nowrap;
       scroll-behavior: smooth;
     }
+=======
+}
+nav ul li a.active {
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.2); /* Dimmed background color */
+}
+/* Hero Section */
+.hero {
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    padding: 100px 0;
+}
+>>>>>>> e3a955f365799a2450be0ad43fd2d253f5972b6d
 
     section.menu-item {
       width: 300px;
@@ -265,6 +302,7 @@
   </style>
   <body>
     <header>
+<<<<<<< HEAD
       <div class="logo">
         <img src="../static/img/home/logoPage.png" alt="Logo" />
       </div>
@@ -291,6 +329,34 @@
           </li>
         </ul>
       </nav>
+=======
+        <div class="logo">
+            <a href="/" ><img th:src="@{/static/img/home/logoPage.png}" alt="Logo"></a>
+        </div>
+        <div class="topnav">   
+            <input type="text" placeholder="Tìm kiếm..."/>
+            <button type="submit"><i class="fa fa-search"></i></button>
+            
+          </div>
+          <nav>
+            <ul>
+<<<<<<< HEAD
+                <!-- <li><a href="#"><b>Trang Chủ</b></a></li> -->
+                <li><a href="#"><b>Giới thiệu</b></a></li>
+                <li><a href="#"><b>Thực đơn</b></a></li>
+                <li><a href="#"><b>Liên Hệ</b></a></li>
+                <li><a href="login"><b>Đăng nhập</b></a></li>
+=======
+                <li><a href="home.html" class="active"><b>Trang Chủ</b></a></li>
+                <li><a href="gioi-thieu.html"><b>Giới Thiệu</b></a></li>
+                <li><a href="thuc-don.html"><b>Thực Đơn</b></a></li>
+                <li><a href="lien-he.html"><b>Liên Hệ</b></a></li>
+                <li><a href="dang-nhap.html"><b>Đăng Nhập</b></a></li>
+>>>>>>> f53d1d098e893eccbf7068e1994fd0c80c0ab516
+            </ul>
+        </nav>
+        
+>>>>>>> e3a955f365799a2450be0ad43fd2d253f5972b6d
     </header>
 
     <section class="hero">
