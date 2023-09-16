@@ -27,13 +27,16 @@
             <input type="password" name="password" required>
             <label>Password</label>
           </div>
+          <p th:if="${error}" style="margin-bottom: 15px;">
+            <span style="color:red; font-size: 15px;">Tài khoản hoặc mật khẩu không đúng!!!</span>
+          </p>
           <div class="check">
             <label><input type="checkbox">Remember me</label>
             <a href="#">Forget PassWord</a>
           </div>
           <button type="submit" class="btn">Login</button>
           <div class="register">
-            <p>Don't have an account?<a href="signup.html" class="register-link">Signup</a> </p>
+            <p>Don't have an account?<a href="signup" class="register-link">Signup</a> </p>
           </div>
         </form>
       </div>

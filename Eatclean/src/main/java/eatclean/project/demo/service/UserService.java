@@ -30,7 +30,7 @@ public class UserService {
         Login newLogin = new Login();
         newLogin.setUsername(userDto.getUsername());
         newLogin.setPassword(userDto.getPassword());
-        newLogin.setRole(userDto.getRole());
+        newLogin.setRole("customer");
         loginRepository.save(newLogin);
 
         User newUser = new User();

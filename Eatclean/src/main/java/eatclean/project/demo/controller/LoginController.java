@@ -30,21 +30,28 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute("user") Login user ) {
+    public ModelAndView login(@ModelAttribute("user") Login user ) {
     	
     	Login oauthUser = userService.login(user.getUsername(), user.getPassword());
     	System.out.print(oauthUser);
+
+        ModelAndView modelAndView = new ModelAndView();
+
     	if(Objects.nonNull(oauthUser)) 
     	{	
             if("admin".equals(oauthUser.getRole()) || "ADMIN".equals(oauthUser.getRole())){
-                return "redirect:/thongke";
+                modelAndView.setViewName("redirect:/thongke");
             }
     		else{
-                return "redirect:/";
+                modelAndView.setViewName("redirect:/");
             }
     	} else {
-    		return "redirect:/login?error=true";	
+    		// return "redirect:/login?error=true";	
+            modelAndView.addObject("error", true);
+            modelAndView.addObject("errorMessage", "Tài khoản hoặc mật khẩu không đúng!!!");
+            modelAndView.setViewName("login");
     	}
+        return modelAndView;
        
     }
     
