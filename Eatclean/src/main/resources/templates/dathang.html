@@ -1,51 +1,430 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Tiết Sản Phẩm</title>
-    <link rel="stylesheet" href="../static/dathang.css">
-</head>
-<body>
-    <header>
-        <h1>Chi Tiết Sản Phẩm</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Sản phẩm</a></li>
-                <li><a href="#">Giỏ hàng</a></li>
-                <li><a href="#">Đăng xuất</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="product-details">
-            <img src="product.jpg" alt="Sản phẩm">
-            <h2>Tên Sản Phẩm</h2>
-            <p>Mô tả sản phẩm: sạch, ngon.</p>
-            <p>Giá: $5.99</p>
-            <button class="order-btn">Đặt Hàng</button>
-            <button class="add-to-cart-btn">Thêm vào Giỏ Hàng</button>
-            <div class="product-rating">
-                <h3>Đánh Giá Sản Phẩm</h3>
-                <p>Đánh giá trung bình: 4.5/5</p>
-                <form class="rating-form">
-                    <label for="rating">Đánh giá sản phẩm:</label>
-                    <select id="rating" name="rating">
-                        <option value="5">5 sao</option>
-                        <option value="4">4 sao</option>
-                        <option value="3">3 sao</option>
-                        <option value="2">2 sao</option>
-                        <option value="1">1 sao</option>
-                    </select>
-                    <textarea id="review" name="review" placeholder="Viết đánh giá của bạn"></textarea>
-                    <button type="submit">Gửi Đánh Giá</button>
-                </form>
+<html lang="vi-VN" data-nhanh.vn-template="T0307" class="anyflexbox boxshadow display-table">
+    <head>
+        <meta name="robots" content="noindex" />
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"> 
+        <meta charset="utf-8"><title>Thanh toán</title>
+        <meta name="DC.language" content="scheme&#x3D;utf-8&#x20;content&#x3D;vi">
+        <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+        <meta name="google-site-verification" content="">
+        <link href="https&#x3A;&#x2F;&#x2F;pos.nvncdn.net&#x2F;16a837-71503&#x2F;store&#x2F;20200325_ZRJHulhsIfpehzWImFaQoMVt.png" rel="icon" type="image&#x2F;vnd.microsoft.icon">
+        <link rel="stylesheet" href="https://web.nvnstatic.net/css/fontAwesome/font-awesome-4.7.0.min.css?v=2" type="text/css">
+        <link rel="stylesheet" href="https://web.nvnstatic.net/css/bootstrap/bootstrap.4.3.1.min.css?v=2" type="text/css">
+        <link rel="stylesheet" href="https://web.nvnstatic.net/js/jquery/fancybox-2.1.5/source/jquery.fancybox.css?v=2" type="text/css">
+        <link rel="stylesheet" href="https://web.nvnstatic.net/css/validationEngine.jquery.css?v=2" type="text/css">
+        <link rel="stylesheet" href="https://web.nvnstatic.net/css/jqueryUI/jqui.css?v=2" type="text/css">
+        <link rel="stylesheet" href="https://web.nvnstatic.net/tp/T0307/css/layoutnull.css?v=35" type="text/css">
+        <script defer type="text/javascript" src="https://web.nvnstatic.net/js/jquery/jquery.min.js?v=2"></script>
+        <script defer type="text/javascript" src="https://web.nvnstatic.net/js/bootstrap/bootstrap.4.3.1.min.js?v=2"></script>
+        <script defer type="text/javascript" src="https://web.nvnstatic.net/js/jquery/jquery.number.min.js?v=2"></script>
+        <script defer type="text/javascript" src="https://web.nvnstatic.net/js/jquery/slimscroll.min.js?v=2"></script>
+        <script defer type="text/javascript" src="https://web.nvnstatic.net/js/jquery/fancybox-2.1.5/source/jquery.fancybox.js?v=2"></script>
+        <script defer type="text/javascript" src="https://web.nvnstatic.net/js/lib.js?v=2"></script>
+        <script defer type="text/javascript" src="https://web.nvnstatic.net/js/jquery/jquery.cookie.js?v=2"></script>
+        <script defer type="text/javascript" src="https://web.nvnstatic.net/js/jquery/jquery-ui-1.10.3.custom.min.js?v=2"></script>
+        <style type="text/css"></style>
+        <style type="text/css">img {max-width: 100%;} img.lazyload{ opacity: 0.001; object-fit: scale-down !important; } .fb-customerchat>span>iframe.fb_customer_chat_bounce_out_v2 {max-height: 0 !important;}  .fb-customerchat>span>iframe.fb_customer_chat_bounce_in_v2{max-height: calc(100% - 80px) !important;}</style>
+        <script src="https://pos.nvnstatic.net/cache/location.vn.js?v=231013_172145" defer></script>
+        <script src="https://web.nvnstatic.net/js/lazyLoad/lazysizes.min.js" async></script>
+        <style>figure.image{clear: both;display: table;margin: .9em auto;min-width: 50px;text-align: center;width: auto !important;}figure.image img {display: block;margin: 0 auto;max-width: 100%;min-width: 100%;}figure.image>figcaption {background-color: #f7f7f7;caption-side: bottom;color: #333;display: table-caption;font-size: .75em;outline-offset: -1px;padding: .6em;word-break: break-word;}figure.image img, img.image_resized {height: auto !important;aspect-ratio: auto !important;}</style>
+        <script src="https://web.nvnstatic.net/js/translate/vi-vn.js" defer></script>
+    </head>
+    <body class="body--custom-background-color">
+        <input type="hidden" id="storeId" value="71503"> 
+        <script defer type="text/javascript" src="https://web.nvnstatic.net/js/jquery/jquery.validationEngine.js?v=2"></script>
+        <script defer type="text/javascript" src="https://web.nvnstatic.net/js/jquery/jquery.validationEngine-vi.js?v=2"></script>
+        <script defer type="text/javascript" src="https://web.nvnstatic.net/js/jquery/fancybox-2.1.5/source/jquery.fancybox.js?v=2"></script>
+        <script defer type="text/javascript" src="https://web.nvnstatic.net/js/jquery/jquery.number.min.js?v=2"></script>
+        <script defer type="text/javascript" src="https://web.nvnstatic.net/js/jquery/slimscroll.min.js?v=2"></script>
+        <script defer type="text/javascript" src="https://web.nvnstatic.net/tp/T0307/js/orders.js?v=7"></script>
+        <link rel="stylesheet" href="https://web.nvnstatic.net/css/validationEngine.jquery.css?v=2" type="text/css">
+        <link rel="stylesheet" href="https://web.nvnstatic.net/js/jquery/fancybox-2.1.5/source/jquery.fancybox.css?v=2" type="text/css">
+        <div class="banner">
+            <div class="wrap">
+                <div class="shop logo logo--left "><h1 class="shop__name">
+                    <a href="/">
+                        <img src="C:\Users\84973\Downloads\logoPage (1).png" alt="">
+                    </a>
+                </h1>
             </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023</p>
-    </footer>
-</body>
-</html>
+        </div>
+    </div>
+    <button class="order-summary-toggle">
+        <div class="wrap">
+            <h2>
+                <label class="control-label">
+                    Đơn hàng
+                </label>
+                <label class="control-label hidden-small-device">
+                    (1 Sản phẩm)
+                </label>
+                <label class="control-label visible-small-device inline">
+                    (1)
+                </label>
+            </h2>
+            <a class="underline-none expandable pull-right" data-toggle="collapse" data-target=".order-summary--is-collapsed" href="javascript:void(0)">
+                Xem chi tiết
+            </a>
+        </div>
+    </button>
+    <form id="formCheckout" class="validate content stateful-form formCheckout" method="post">
+        <div class="wrap">
+            <div class="sidebar">
+                <div class="sidebar_header">
+                    <h2>
+                        <label class="control-label">
+                            Đơn hàng
+                        </label> 
+                        <label class="control-label">
+                            (1 Sản phẩm)
+                        </label>
+                    </h2>
+                    <hr class="full_width">
+                </div>
+                <div class="sidebar__content">
+                    <div class="order-summary order-summary--product-list order-summary--is-collapsed collapse" aria-expanded="false">
+                        <div class="summary-body summary-section summary-product">
+                            <div class="summary-product-list">
+                                <table class="product-table">
+                                    <tr class="product product-has-image clearfix">
+                                        <td>
+                                            <div class="product-thumbnail">
+                                                <div class="product-thumbnail__wrapper"> 
+                                                    <img src="c:\Users\84973\Downloads\item1.jpg" class="product-thumbnail__image">
+                                                </div>
+                                                <span class="product-thumbnail__quantity" aria-hidden="true">
+                                                    1
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td class="product-info">
+                                            <span class="product-info-name">Salad cá hồi
+                                            </span>
+                                        </td>
+                                        <td class="product-price text-right">
+                                            80,000₫
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="order-summary__scroll-indicator">
+                                    Cuộn chuột để xem thêm
+                                    <i class="fa fa-long-arrow-down" aria-hidden="true">
+                                    </i>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="m0">
+                    </div>
+                    <div class="order-summary order-summary--discount">
+                        <div class="summary-section">
+                            <div class="form-group m0">
+                                <div class="field__input-btn-wrapper">
+                                    <div class="field__input-wrapper"> 
+                                        <input type="text" name="couponCode" id="couponCode" class="form-control discount_code" placeholder="Mã giảm giá" value="">
+                                    </div>
+                                    <button id="getCoupon" class="btn btn-danger event-voucher-apply tp_button" type="button">
+                                        Áp dụng
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="m0">
+                    </div>
+                    <div class="order-summary order-summary--total-lines">
+                        <div class="summary-section border-top-none--mobile">
+                            <div class="total-line total-line-subtotal clearfix">
+                                <span class="total-line-name pull-left">
+                                    Tạm tính                            
+                                </span>
+                                <span class="total-line-subprice pull-right">
+                                    80,000₫                            
+                                </span>
+                            </div>
+                            <div class="total-line total-line-shipping clearfix">
+                                <span class="total-line-name pull-left">
+                                    Chiết khấu                            
+                                </span>
+                                <span class="pull-right">
+                                    0
+                                </span>
+                            </div>
+                            <div class="total-line total-line-shipping clearfix">
+                                <span class="total-line-name pull-left">
+                                    Giảm giá                            
+                                </span> 
+                                <span id="moneyCoupon" class="pull-right" value="0">
+                                    0₫
+                                </span>
+                            </div>
+                            <div class="total-line total-line-shipping clearfix transport-text"> 
+                                <span class="total-line-name pull-left">
+                                    Phí vận chuyển                                
+                                    <span id="showCarrier">
+                                    </span>
+                                    <style>
+                                    #showCarrier {
+                                    display: block;
+                                    text-align: right;
+                                    width: 100%;
+                                    font-size: 11px;
+                                    clear: both;
+                                    width: 100%;
+                                }
+
+                                .changeOrtherShipFee:hover {
+                                    color: darkred;
+                                    text-decoration: underline;
+                                }
+                                </style>
+                                </span>
+                                <span id="shipFee" class="total-line-shipping pull-right" value="0">
+                                    0₫
+                                </span>
+                            </div>
+                            <div
+                            class="total-line total-line-total clearfix">
+                            <span class="total-line-name pull-left">
+                                Tổng cộng                            
+                            </span>
+                            <span id="totalMoney" class="total-line-price pull-right" value="280000">
+                                80,000₫
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group clearfix hidden-sm hidden-xs">
+                    <div class="field__input-btn-wrapper mt10"> 
+                        <a class="previous-link" href="/cart">
+                            <i class="fa fa-angle-left fa-lg" aria-hidden="true">
+                            </i>
+                            <span>
+                                Quay về giỏ hàng
+                            </span>
+                        </a>
+                        <input class="btn btn-success btn-checkout tp_button" data-loading-text="Đang xử lý" type="button" value="Đặt hàng">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main" role="main">
+            <div class="main_header">
+                <div class="shop logo logo--left ">
+                    <h1 class="shop__name">
+                        <a href="/"> 
+                            <img src="C:\Users\84973\Downloads\logoPage (1).png" alt="logo">
+                        </a>
+                    </h1>
+                </div>
+            </div>
+            <div class="main_content">
+                <div class="row">
+                    <div class="col-md-6 col-lg-6">
+                        <div class="section">
+                            <div class="section__header">
+                                <div class="layout-flex layout-flex--wrap">
+                                    <h2 class="section__title layout-flex__item layout-flex__item--stretch">
+                                        <i class="fa fa-id-card-o fa-lg section__title--icon hidden-md hidden-lg" aria-hidden="true">
+                                        </i>
+                                        <label class="control-label">
+                                            Thông tin khách hàng
+                                        </label>
+                                    </h2>
+                                    <a href="/profile" class="layout-flex__item section__title--link">
+                                        <i class="fa fa-user-circle-o fa-lg" aria-hidden="true">
+                                        </i>
+                                        ngattran                                        
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="section__content">
+                                <in class="billing">
+                                    <div class="form-group">
+                                        <div class="field__input-wrapper">
+                                            <input type="text" name="customerName" id="customerName" required="" class="field__input form-control validate[required]" value="ngattran" placeholder="Họ và tên">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" > 
+                                        <label class="field__input-wrapper">
+                                            <input name="customerEmail" id="customerEmail" type="email" class="field__input form-control   " value="nt156969@gmail.com" placeholder="Email">
+                                            <span class="field__label">
+                                            </span> 
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="field__input-wrapper">
+                                            <input name="customerMobile" id="customerMobile" type="text"
+                                            class="field__input form-control validate[required,custom[phone]]"
+                                            value="0365819803" placeholder="Điện thoại">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="field__input-wrapper"> 
+                                            <input name="customerAddress" id="customerAddress" type="text" class="field__input form-control validate[required]" value="" placeholder=" Địa chỉ ">
+                                        </div>
+                                    </div>
+                                    <div class="form-group city">
+                                        <div class="field__input-wrapper field__input-wrapper--select">
+                                            <select class="field__input field__input--select form-control validate[required]" name="customerCityId" id="customerCityId" required="">
+                                                <option value="">---Chọn Tỉnh/ thành phố---</option>
+                                                <option value='254'>Hà Nội</option>
+                                                <option value='255'>Hồ Chí Minh</option>
+                                                <option value='256'>An Giang</option>
+                                                <option value='257'>Bà Rịa - Vũng Tàu</option>
+                                                <option value='258'>Bắc Ninh</option>
+                                                <option value='259'>Bắc Giang</option>
+                                                <option value='260'>Bình Dương</option>
+                                                <option value='261'>Bình Định</option>
+                                                <option value='262'>Bình Phước</option>
+                                                <option value='263'>Bình Thuận</option>
+                                                <option value='264'>Bến Tre</option>
+                                                <option value='265'>Bắc Cạn</option>
+                                                <option value='266'>Cần Thơ</option>
+                                                <option value='267'>Khánh Hòa</option>
+                                                <option value='268'>Thừa Thiên Huế</option>
+                                                <option value='269'>Lào Cai</option>
+                                                <option value='270'>Quảng Ninh</option>
+                                                <option value='271'>Đồng Nai</option>
+                                                <option value='272'>Nam Định</option>
+                                                <option value='273'>Cà Mau</option>
+                                                <option value='274'>Cao Bằng</option>
+                                                <option value='275'>Gia Lai</option>
+                                                <option value='276'>Hà Giang</option>
+                                                <option value='277'>Hà Nam</option>
+                                                <option value='278'>Hà Tĩnh</option>
+                                                <option value='279'>Hải Dương</option>
+                                                <option value='280'>Hải Phòng</option>
+                                                <option value='281'>Hòa Bình</option>
+                                                <option value='282'>Hưng Yên</option>
+                                                <option value='283'>Kiên Giang</option>
+                                                <option value='284'>Kon Tum</option>
+                                                <option value='285'>Lai Châu</option>
+                                                <option value='286'>Lâm Đồng</option>
+                                                <option value='287'>Lạng Sơn</option>
+                                                <option value='288'>Long An</option>
+                                                <option value='289'>Nghệ An</option>
+                                                <option value='290'>Ninh Bình</option>
+                                                <option value='291'>Ninh Thuận</option>
+                                                <option value='292'>Phú Thọ</option>
+                                                <option value='293'>Phú Yên</option>
+                                                <option value='294'>Quảng Bình</option>
+                                                <option value='295'>Quảng Nam</option>
+                                                <option value='296'>Quảng Ngãi</option>
+                                                <option value='297'>Quảng Trị</option>
+                                                <option value='298'>Sóc Trăng</option>
+                                                <option value='299'>Sơn La</option>
+                                                <option value='300'>Tây Ninh</option>
+                                                <option value='301'>Thái Bình</option>
+                                                <option value='302'>Thái Nguyên</option>
+                                                <option value='303'>Thanh Hóa</option>
+                                                <option value='304'>Tiền Giang</option>
+                                                <option value='305'>Trà Vinh</option>
+                                                <option value='306'>Tuyên Quang</option>
+                                                <option value='307'>Vĩnh Long</option>
+                                                <option value='308'>Vĩnh Phúc</option>
+                                                <option value='309'>Yên Bái</option>
+                                                <option value='310'>Đắk Lắk</option>
+                                                <option value='311'>Đồng Tháp</option>
+                                                <option value='312'>Đà Nẵng</option>
+                                                <option value='313'>Đắc Nông</option>
+                                                <option value='314'>Hậu Giang</option>
+                                                <option value='315'>Bạc Liêu</option>
+                                                <option value='316'>Điện Biên</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group district">
+                                        <div class="field__input-wrapper field__input-wrapper--select"> 
+                                            <select class="field__input field__input--select form-control validate[required]" name="customerDistrictId" id="customerDistrictId">
+                                                <option value="">--- Chọn Quận/ Huyện---</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group district">
+                                        <div class="field__input-wrapper field__input-wrapper--select"> 
+                                            <select class="field__input field__input--select form-control validate[required]" name="wardId" id="wardId">
+                                                <option value="">--- Chọn Phường/ Xã---</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section pt10">
+                                <div class="section__content">
+                                    <div class="form-group m0">
+                                        <textarea name="description" class="field__input form-control m0" placeholder="Ghi chú">
+                                    </textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6">
+                        <div class="section payment-methods p0--desktop">
+                            <div class="section__header">
+                                <h2 class="section__title"> 
+                                    <i class="fa fa-credit-card fa-lg section__title--icon hidden-md hidden-lg" aria-hidden="true">
+                                    </i> 
+                                    <label class="control-label">
+                                        Thanh toán
+                                    </label>
+                                </h2>
+                            </div>
+                            <div class="section__content">
+                                <div class="content-box">
+                                    <div class="content-box__row">
+                                        <div class="radio-wrapper">
+                                            <div class="radio__input"> 
+                                                <input class="input-radio" type="radio" value="1" name="paymentMethod" id="pay_cod" checked="">
+                                            </div> 
+                                            <label class="radio__label" for="pay_cod"> 
+                                                <span class="radio__label__primary">
+                                                    Thanh toán khi nhận hàng (COD)
+                                                </span>
+                                                <span class="radio__label__accessory">
+                                                    <ul>
+                                                        <li class="payment-icon-v2 payment-icon--4"> 
+                                                            <i class="fa fa-money payment-icon-fa" aria-hidden="true">
+                                                            </i>
+                                                        </li>
+                                                    </ul>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section hidden-md hidden-lg">
+                            <div class="form-group clearfix m0">
+                                <input class="btn btn-primary btn-checkout tp_button" data-loading-text="Đang xử lý" type="button" value="Đặt hàng">
+                            </div>
+                            <div class="text-center mt20">
+                                <a class="previous-link" href="/cart"> 
+                                    <i class="fa fa-angle-left fa-lg" aria-hidden="true">
+                                    </i> 
+                                    <span>
+                                        Quay về giỏ hàng
+                                    </span> 
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-ship">
+                <div id="tableShipFee">
+                </div>
+                </div>
+                </div>
+                </div>
+                </form>
+                <style>
+                #tableShipFee{
+                    display: none;
+                    }
+                    </style>
+                    <input type="hidden" class="fanpageId" value="">
+                    <input type="hidden" id="bussinessId" value="71503">
+                    <input type="hidden" value="eNt2fSITgCw7drtTGKUCMVvh2ElFuVViOpN4PVWAFohecWsaM1cF4tgoUMXGwykGaO8JII1Om4Wi7jytxackTvezNruiLxUIWihYrDD4xO5BjIHHprl6EMqyMudNpGxZ4pHl9oRSMMKxm7anXWXrYh6xoWlEfQjYGPIyjmvg5pzIRvX2etBmR9" id="uctk" name="uctk" />
+                    <input type="hidden" id="clienIp" value="1.53.8.223">
+                </body>
+                </html>
