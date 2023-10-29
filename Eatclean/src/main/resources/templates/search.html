@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css"  th:href="@{/static/css/home.css}">
-    <link rel="stylesheet" type="text/css"  th:href="@{/static/css/search.css}">
-    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css}">
-    <link rel="stylesheet" th:href="@{https://unpkg.com/boxicons@latest/css/boxicons.min.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="/static/css/search.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <title>EATCLEAN</title>
+    <script>
+        function findBook() {
+            let keywordInput = document.querySelector(".input100");
+            let keyword = keywordInput.value;
+            window.location = "/search?keyword=" + keyword;
+        }
+    </script>
 </head>
 <body>
     <section class="page1">
@@ -35,8 +42,8 @@
                 <a href="#" class="btn">learn more</a>
             </div>
             <div class="find">
-                <input class="input100" type="text" name="keyword"  placeholder="Nhập thực đơn, đồ ăn cần tìm" >
-                <button class="timkiem" type="submit" onclick="findBook()"></button>
+                <input class="input100" type="text" name="keyword" placeholder="Nhập thực đơn, đồ ăn cần tìm" style="font-size: 15pt;">
+                <button class="timkiem" type="button" onclick="findBook()"></button>
             </div>
         </div>
     </section>
@@ -45,79 +52,29 @@
         <hr style="color: green; height: 2px;">
     </div>
     <div class="ds">
-        <div class="item" bis_skin_checked="1">
-            <h3 class="sp_name"><a class="catchuoi2" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY" style="text-decoration: none; color: black;">CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY</a></h3>
-            <img src="https://healthyeating.shop/wp-content/uploads/2020/12/che-do-an-giam-can-keto-7-ngay-450x450.jpg" alt="">
-            <p class="mota catchuoi3">Mấu chốt là bạn phải kiên trì thực hiện và có lòng tin. Người khác đều đã giảm cân được, chỉ còn bạn thôi đấy!
-                - Gói ăn tuần giảm cân Keto 7 ngày mỗi ngày 2 bữa ăn
-                - Không chứa tinh bột
-                - Ship gói ăn tận nhà từ thứ 2 đến chủ nhật
-                - Calories dao động từ 1000 - 1200 mỗi ngày
-                - Ít đường, rau củ xa</p>
-    
-            <p class="sp_gia" style="font-weight: bold;font-size: 20px; color: black;">Giá: <span class="giakm" style="font-size: 20pt; color: red;">750,000 đ</span></p>
-            <!-- <a class="xct" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="Đặt hàng" style="margin-top: 50px;">Đặt hàng <i class="fal fa-chevron-right"></i></a> -->
-            <div style="width: 150px; border: 1px solid black; margin-bottom: 20px; margin-top: 20px; margin-left: 90px;">
-                <a href = "" class = "xct" style="width: 100px;"> Đặt hàng </a>
-            </div>
-        </div>
-        <div class="item" bis_skin_checked="1">
-            <h3 class="sp_name"><a class="catchuoi2" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY" style="text-decoration: none; color: black;">CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY</a></h3>
-            <img src="https://healthyeating.shop/wp-content/uploads/2020/12/che-do-an-giam-can-keto-7-ngay-450x450.jpg" alt="">
-            <p class="mota catchuoi3">Mấu chốt là bạn phải kiên trì thực hiện và có lòng tin. Người khác đều đã giảm cân được, chỉ còn bạn thôi đấy!
-                - Gói ăn tuần giảm cân Keto 7 ngày mỗi ngày 2 bữa ăn
-                - Không chứa tinh bột
-                - Ship gói ăn tận nhà từ thứ 2 đến chủ nhật
-                - Calories dao động từ 1000 - 1200 mỗi ngày
-                - Ít đường, rau củ xa</p>
-    
-            <p class="sp_gia" style="font-weight: bold;font-size: 20px; color: black;">Giá: <span class="giakm" style="font-size: 20pt; color: red;">750,000 đ</span></p>
-            <!-- <a class="xct" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="Đặt hàng" style="margin-top: 50px;">Đặt hàng <i class="fal fa-chevron-right"></i></a> -->
-            <div style="width: 150px; border: 1px solid black; margin-bottom: 20px; margin-top: 20px; margin-left: 100px;">
-                <a href = "" class = "xct" style="width: 100px;"> Đặt hàng </a>
-            </div>
-        </div>
-        <div class="item" bis_skin_checked="1">
-            <h3 class="sp_name"><a class="catchuoi2" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY" style="text-decoration: none; color: black;">CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY</a></h3>
-            <img src="https://healthyeating.shop/wp-content/uploads/2020/12/che-do-an-giam-can-keto-7-ngay-450x450.jpg" alt="">
-            <p class="mota catchuoi3">Mấu chốt là bạn phải kiên trì thực hiện và có lòng tin. Người khác đều đã giảm cân được, chỉ còn bạn thôi đấy!
-                - Gói ăn tuần giảm cân Keto 7 ngày mỗi ngày 2 bữa ăn
-                - Không chứa tinh bột
-                - Ship gói ăn tận nhà từ thứ 2 đến chủ nhật
-                - Calories dao động từ 1000 - 1200 mỗi ngày
-                - Ít đường, rau củ xa</p>
-    
-            <p class="sp_gia" style="font-weight: bold;font-size: 20px; color: black;">Giá: <span class="giakm" style="font-size: 20pt; color: red;">750,000 đ</span></p>
-            <!-- <a class="xct" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="Đặt hàng" style="margin-top: 50px;">Đặt hàng <i class="fal fa-chevron-right"></i></a> -->
-            <div style="width: 150px; border: 1px solid black; margin-bottom: 20px; margin-top: 20px; margin-left: 100px;">
-                <a href = "" class = "xct" style="width: 100px;"> Đặt hàng </a>
-            </div>
-        </div>
-        <div class="item" bis_skin_checked="1">
-            <h3 class="sp_name"><a class="catchuoi2" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY" style="text-decoration: none; color: black;">CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY</a></h3>
-            <img src="https://healthyeating.shop/wp-content/uploads/2020/12/che-do-an-giam-can-keto-7-ngay-450x450.jpg" alt="">
-            <p class="mota catchuoi3">Mấu chốt là bạn phải kiên trì thực hiện và có lòng tin. Người khác đều đã giảm cân được, chỉ còn bạn thôi đấy!
-                - Gói ăn tuần giảm cân Keto 7 ngày mỗi ngày 2 bữa ăn
-                - Không chứa tinh bột
-                - Ship gói ăn tận nhà từ thứ 2 đến chủ nhật
-                - Calories dao động từ 1000 - 1200 mỗi ngày
-                - Ít đường, rau củ xa</p>
-    
-            <p class="sp_gia" style="font-weight: bold;font-size: 20px; color: black;">Giá: <span class="giakm" style="font-size: 20pt; color: red;">750,000 đ</span></p>
-            <!-- <a class="xct" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="Đặt hàng" style="margin-top: 50px;">Đặt hàng <i class="fal fa-chevron-right"></i></a> -->
-            <div style="width: 150px; border: 1px solid black; margin-bottom: 20px; margin-top: 20px; margin-left: 100px;">
-                <a href = "" class = "xct" style="width: 100px;"> Đặt hàng </a>
-            </div>
-        </div>
+        <ul style="display: flex; flex-wrap: wrap; max-width: 100%;">
+            <li th:each="product : ${products}" style="flex-basis: 25%;">
+                <a>
+                    <div class="item" bis_skin_checked="1">
+                        <h3><a title="CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY" style="text-decoration: none; color: black;"><span th:text="${product.name}"></span></a></h3>
+                        <img th:src="@{${product.image}}" alt="img">
+                        <p><span th:text="${product.status}"></span></p>
+                        <p class="sp_gia" style="font-weight: bold;font-size: 20px; color: black;">Giá: <span class="giakm" style="font-size: 20pt; color: red;" th:text="${product.price}"> đ</span></p>
+                        <div style="width: 150px; border: 1px solid black; margin-bottom: 20px; margin-top: 20px; margin-left: 90px; position: absolute;">
+                            <a href="" class="xct" style="width: 100px;">Đặt hàng</a>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </div>
-
-<footer class="footer">
-    <a href="">EATCLEAN SHOP © 2023</a>
-    <a href="">PRIVACY POLICY</a>
-    <a href="">SUPPLIERS</a>
-</footer>
-
-
-<script th:src="@{/static/script.js}"></script>
+    
+    
+    <footer class="footer">
+        <a >EATCLEAN SHOP © 2023</a>
+        <a >PRIVACY POLICY</a>
+        <a >SUPPLIERS</a>
+    </footer>
+    
 </body>
 </html>
