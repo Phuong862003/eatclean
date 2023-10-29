@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"  th:href="@{/static/css/home.css}">
+    <link rel="stylesheet" type="text/css"  th:href="@{/static/css/search.css}">
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css}">
+    <link rel="stylesheet" th:href="@{https://unpkg.com/boxicons@latest/css/boxicons.min.css}">
+    <title>EATCLEAN</title>
+</head>
+<body>
+    <section class="page1">
+        <nav class="navbar container">
+            <a href="#"><img src="https://eatcleanmealprep.com/wp-content/uploads/2020/11/eat-clean-meal-prep-logo.png" alt=""></a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About BMI</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="logo">
+                <a href="login">Me</a>
+                <a href="#">My Cart</a>
+                <a href="#">My To-Do-List</a>
+            </div>
+        </nav>
+        <div style="display: flex; margin-top: 300px;">
+            <div class="text container" style="width: 500px; margin-left: 100px;">
+                <p>Welcome to </p>
+                <h1>EatClean Shop</h1>
+                <a href="#" class="btn">learn more</a>
+            </div>
+            <div class="find">
+                <input class="input100" type="text" name="keyword"  placeholder="Nhập thực đơn, đồ ăn cần tìm" >
+                <button class="timkiem" type="submit" onclick="findBook()"></button>
+            </div>
+        </div>
+    </section>
+    <div class="title">
+        <h1>Danh sách gói ăn</h1>
+        <hr style="color: green; height: 2px;">
+    </div>
+    <div class="ds">
+        <div class="item" bis_skin_checked="1">
+            <h3 class="sp_name"><a class="catchuoi2" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY" style="text-decoration: none; color: black;">CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY</a></h3>
+            <img src="https://healthyeating.shop/wp-content/uploads/2020/12/che-do-an-giam-can-keto-7-ngay-450x450.jpg" alt="">
+            <p class="mota catchuoi3">Mấu chốt là bạn phải kiên trì thực hiện và có lòng tin. Người khác đều đã giảm cân được, chỉ còn bạn thôi đấy!
+                - Gói ăn tuần giảm cân Keto 7 ngày mỗi ngày 2 bữa ăn
+                - Không chứa tinh bột
+                - Ship gói ăn tận nhà từ thứ 2 đến chủ nhật
+                - Calories dao động từ 1000 - 1200 mỗi ngày
+                - Ít đường, rau củ xa</p>
+    
+            <p class="sp_gia" style="font-weight: bold;font-size: 20px; color: black;">Giá: <span class="giakm" style="font-size: 20pt; color: red;">750,000 đ</span></p>
+            <!-- <a class="xct" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="Đặt hàng" style="margin-top: 50px;">Đặt hàng <i class="fal fa-chevron-right"></i></a> -->
+            <div style="width: 150px; border: 1px solid black; margin-bottom: 20px; margin-top: 20px; margin-left: 90px;">
+                <a href = "" class = "xct" style="width: 100px;"> Đặt hàng </a>
+            </div>
+        </div>
+        <div class="item" bis_skin_checked="1">
+            <h3 class="sp_name"><a class="catchuoi2" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY" style="text-decoration: none; color: black;">CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY</a></h3>
+            <img src="https://healthyeating.shop/wp-content/uploads/2020/12/che-do-an-giam-can-keto-7-ngay-450x450.jpg" alt="">
+            <p class="mota catchuoi3">Mấu chốt là bạn phải kiên trì thực hiện và có lòng tin. Người khác đều đã giảm cân được, chỉ còn bạn thôi đấy!
+                - Gói ăn tuần giảm cân Keto 7 ngày mỗi ngày 2 bữa ăn
+                - Không chứa tinh bột
+                - Ship gói ăn tận nhà từ thứ 2 đến chủ nhật
+                - Calories dao động từ 1000 - 1200 mỗi ngày
+                - Ít đường, rau củ xa</p>
+    
+            <p class="sp_gia" style="font-weight: bold;font-size: 20px; color: black;">Giá: <span class="giakm" style="font-size: 20pt; color: red;">750,000 đ</span></p>
+            <!-- <a class="xct" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="Đặt hàng" style="margin-top: 50px;">Đặt hàng <i class="fal fa-chevron-right"></i></a> -->
+            <div style="width: 150px; border: 1px solid black; margin-bottom: 20px; margin-top: 20px; margin-left: 100px;">
+                <a href = "" class = "xct" style="width: 100px;"> Đặt hàng </a>
+            </div>
+        </div>
+        <div class="item" bis_skin_checked="1">
+            <h3 class="sp_name"><a class="catchuoi2" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY" style="text-decoration: none; color: black;">CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY</a></h3>
+            <img src="https://healthyeating.shop/wp-content/uploads/2020/12/che-do-an-giam-can-keto-7-ngay-450x450.jpg" alt="">
+            <p class="mota catchuoi3">Mấu chốt là bạn phải kiên trì thực hiện và có lòng tin. Người khác đều đã giảm cân được, chỉ còn bạn thôi đấy!
+                - Gói ăn tuần giảm cân Keto 7 ngày mỗi ngày 2 bữa ăn
+                - Không chứa tinh bột
+                - Ship gói ăn tận nhà từ thứ 2 đến chủ nhật
+                - Calories dao động từ 1000 - 1200 mỗi ngày
+                - Ít đường, rau củ xa</p>
+    
+            <p class="sp_gia" style="font-weight: bold;font-size: 20px; color: black;">Giá: <span class="giakm" style="font-size: 20pt; color: red;">750,000 đ</span></p>
+            <!-- <a class="xct" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="Đặt hàng" style="margin-top: 50px;">Đặt hàng <i class="fal fa-chevron-right"></i></a> -->
+            <div style="width: 150px; border: 1px solid black; margin-bottom: 20px; margin-top: 20px; margin-left: 100px;">
+                <a href = "" class = "xct" style="width: 100px;"> Đặt hàng </a>
+            </div>
+        </div>
+        <div class="item" bis_skin_checked="1">
+            <h3 class="sp_name"><a class="catchuoi2" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY" style="text-decoration: none; color: black;">CHẾ ĐỘ ĂN GIẢM CÂN KETO 7 NGÀY</a></h3>
+            <img src="https://healthyeating.shop/wp-content/uploads/2020/12/che-do-an-giam-can-keto-7-ngay-450x450.jpg" alt="">
+            <p class="mota catchuoi3">Mấu chốt là bạn phải kiên trì thực hiện và có lòng tin. Người khác đều đã giảm cân được, chỉ còn bạn thôi đấy!
+                - Gói ăn tuần giảm cân Keto 7 ngày mỗi ngày 2 bữa ăn
+                - Không chứa tinh bột
+                - Ship gói ăn tận nhà từ thứ 2 đến chủ nhật
+                - Calories dao động từ 1000 - 1200 mỗi ngày
+                - Ít đường, rau củ xa</p>
+    
+            <p class="sp_gia" style="font-weight: bold;font-size: 20px; color: black;">Giá: <span class="giakm" style="font-size: 20pt; color: red;">750,000 đ</span></p>
+            <!-- <a class="xct" href="https://healthyeating.shop/package/che-do-an-giam-can-keto-7-ngay/" title="Đặt hàng" style="margin-top: 50px;">Đặt hàng <i class="fal fa-chevron-right"></i></a> -->
+            <div style="width: 150px; border: 1px solid black; margin-bottom: 20px; margin-top: 20px; margin-left: 100px;">
+                <a href = "" class = "xct" style="width: 100px;"> Đặt hàng </a>
+            </div>
+        </div>
+    </div>
+
+<footer class="footer">
+    <a href="">EATCLEAN SHOP © 2023</a>
+    <a href="">PRIVACY POLICY</a>
+    <a href="">SUPPLIERS</a>
+</footer>
+
+
+<script th:src="@{/static/script.js}"></script>
+</body>
+</html>
