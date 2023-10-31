@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import eatclean.project.demo.enity.User;
 import eatclean.project.demo.enity.UserDto;
@@ -22,18 +23,16 @@ public class RegisterController {
         return "signup";
     }
 
-    @PostMapping(path = "/signup")
-    public String register(@ModelAttribute UserDto userDto) {
-        System.out.println("name: " + userDto.getName());
-        System.out.println("email: " + userDto.getEmail());
-        System.out.println("username: " + userDto.getUsername());
-        System.out.println("password: " + userDto.getPassword());
-        System.out.println("role: " + userDto.getRole());
-        try {
+    @PostMapping(path="/signup")
+    public ModelAndView register(@ModelAttribute UserDto userDto, Model model){
+        ModelAndView modelAndView = new ModelAndView();
+        try{
             userService.register(userDto);
-            return "redirect:/login";
-        } catch (Exception e) {
-            return "redirect:/home";
+            modelAndView.setViewName("redirect:/login");
+        } catch(Exception e){
+            modelAndView.setViewName("redirect:/signup");
+            // model.addAttribute("error", true);
         }
+        return modelAndView;
     }
 }

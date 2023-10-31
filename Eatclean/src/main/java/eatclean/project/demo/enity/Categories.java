@@ -57,7 +57,11 @@ public class Categories {
     }
 
     public Categories(int id, String name, String status, int sort, String metaKeywords, String metaDescriptions,
+<<<<<<< HEAD
             int createdBy, String createdDate, int updateBy, String updateDate, List<Products> products) {
+=======
+            int createdBy, String createdDate, int updateBy, String updateDate, List<Products>products) {
+>>>>>>> b412a1052e8e0f8625b9f8e625d8da564d526e5b
         this.id = id;
         this.name = name;
         this.status = status;
@@ -68,7 +72,11 @@ public class Categories {
         this.createdDate = createdDate;
         this.updateBy = updateBy;
         this.updateDate = updateDate;
+<<<<<<< HEAD
         this.products = products;
+=======
+        this.products=products;
+>>>>>>> b412a1052e8e0f8625b9f8e625d8da564d526e5b
     }
 
     public int getId() {
@@ -159,4 +167,9 @@ public class Categories {
         this.products = products;
     }
 
+<<<<<<< HEAD
+=======
+    
+
+>>>>>>> b412a1052e8e0f8625b9f8e625d8da564d526e5b
 }

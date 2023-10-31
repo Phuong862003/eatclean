@@ -11,7 +11,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Products")
+@Table(name = "products")
 public class Products {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,33 +46,33 @@ public class Products {
     @Column(name = "metaDescriptions")
     private String metaDescriptions;
 
-    @Column(name = "createdBy")
-    private int createdBy;
+    // @Column(name = "createdBy")
+    // private Integer createdBy;
 
-    @Column(name = "createdDate")
-    private String createdDate;
 
-    @Column(name = "updateBy")
-    private int updateBy;
+    // @Column(name = "createdDate")
+    // private String createdDate;
 
-    @Column(name = "updateDate")
-    private String updateDate;
+    // @Column(name = "updateBy")
+    // private int updateBy;
+
+    // @Column(name = "updateDate")
+    // private String updateDate;
 
     public Products() {
         // super();
     }
 
-    public Products(int id, String name, String image, int quantity, float price) {
-        this.id = id;
-        this.name = name;
-        this.image = image;
-        this.quantity = quantity;
-        this.price = price;
-    }
+    // public Products(int id, String name, String image, int quantity, float price) {
+    //     this.id = id;
+    //     this.name = name;
+    //     this.image = image;
+    //     this.quantity = quantity;
+    //     this.price = price;
+    // }
 
     public Products(int id, String name, String status, String description, float price, String image,
-            Categories categories, int quantity, String metaKeywords, String metaDescriptions, int createdBy,
-            String createdDate, int updateBy, String updateDate) {
+            Categories categories, int quantity, String metaKeywords, String metaDescriptions) {
         this.id = id;
         this.name = name;
         this.status = status;
@@ -83,10 +83,7 @@ public class Products {
         this.quantity = quantity;
         this.metaKeywords = metaKeywords;
         this.metaDescriptions = metaDescriptions;
-        this.createdBy = createdBy;
-        this.createdDate = createdDate;
-        this.updateBy = updateBy;
-        this.updateDate = updateDate;
+        
     }
 
     public int getId() {
@@ -172,36 +169,8 @@ public class Products {
         this.metaDescriptions = metaDescriptions;
     }
 
-    public int getCreatedBy() {
-        return createdBy;
-    }
+   
 
-    public void setCreatedBy(int createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(String createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public int getUpdateBy() {
-        return updateBy;
-    }
-
-    public void setUpdateBy(int updateBy) {
-        this.updateBy = updateBy;
-    }
-
-    public String getUpdateDate() {
-        return updateDate;
-    }
-
-    public void setUpdateDate(String updateDate) {
-        this.updateDate = updateDate;
-    }
+    
 
 }
