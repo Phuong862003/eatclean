@@ -59,7 +59,7 @@ public class Products {
     private String updateDate;
 
     public Products() {
-        super();
+        // super();
     }
 
     public Products(int id, String name, String image, int quantity, float price) {
@@ -151,6 +151,9 @@ public class Products {
 
     public void setCategories(Categories categories) {
         this.categories = categories;
+    }
+
+    public void setCategory(Object findById) {
     }
 
     public String getMetaKeywords() {

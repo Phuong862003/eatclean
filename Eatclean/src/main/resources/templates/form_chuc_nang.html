@@ -106,7 +106,6 @@ header{
 
     .tieu_de span {
       color: white;
-      border: 2px solid white;
     }
 
     .icon2 img {
@@ -321,6 +320,11 @@ header{
       font-size: 15px;
     }
 
+    .cart-content-left tr:nth-child(1) td {
+      border-bottom: 2px solid #9eb384;
+      padding-bottom: 30px;
+    }
+
     .cart-content-left tr:nth-child(2) td {
       border-bottom: 2px solid #9eb384;
       padding-bottom: 30px;
@@ -398,7 +402,7 @@ header{
   <body bgcolor="#F3FDE8">
     <header>
       <div class="logo">
-        <img src="../static/Fresh healthy food.png" alt="Logo" />
+        <img src="../static/img/home/logoPage.png" alt="Logo" />
       </div>
       <div class="topnav">
         <input type="text" placeholder="Tìm kiếm..." />
@@ -470,30 +474,7 @@ header{
                   <th>Hành động</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr th:each="product : ${products}">
-                  <td th:text="${product.id}"></td>
-                  <td th:text="${product.image}"></td>
-                  <td th:text="${product.name}"></td>
-                  <td th:text="${product.quantity}"></td>
-                  <td th:text="${product.price}"></td>
-                  <td>
-                    <a
-                      th:href="@{/products/edit/{id}(id=${product.id})}"
-                      class="btn btn-primary"
-                      >Update</a
-                    >
-
-                    <a
-                      th:href="@{/products/{id}(id=${product.id})}"
-                      class="btn btn-danger"
-                      >Delete</a
-                    >
-                  </td>
-                </tr>
-              </tbody>
-              <!--
-                <tr>
+              <tr>
                 <td>
                   <p>1</p>
                 </td>
@@ -595,7 +576,6 @@ header{
                   </div>
                 </td>
               </tr>
-              -->
             </table>
           </div>
         </div>
