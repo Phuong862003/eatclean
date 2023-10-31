@@ -1,5 +1,7 @@
 package eatclean.project.demo.controller;
 
+import java.util.List;
+import java.util.Locale.Category;
 import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,23 +9,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import org.springframework.ui.Model;
 import eatclean.project.demo.enity.Login;
+import eatclean.project.demo.enity.User;
 import eatclean.project.demo.service.LoginService;
+import eatclean.project.demo.service.UserService;
 
 @Controller
 public class LoginController {
     @Autowired
     private LoginService userService;
 
+    @Autowired
+    private UserService userService2;
+
     @GetMapping("/")
-    // @PreAuthorize("isAuthenticated()")
     public String home(){
         return "home";
     }
+
+    
+
     @GetMapping("/login")        
     public ModelAndView login() {
         ModelAndView mav = new ModelAndView("login");
@@ -31,24 +43,39 @@ public class LoginController {
         return mav;
     }
 
+    
+
     @PostMapping("/login")
-    public ModelAndView login(@ModelAttribute("user") Login user ) {
+    public ModelAndView login(@ModelAttribute("user") Login user) {
         Login oauthUser = userService.login(user.getUsername(), user.getPassword());
 
         ModelAndView modelAndView = new ModelAndView();
 
-        if (Objects.nonNull(oauthUser)) {    
+        if (Objects.nonNull(oauthUser)) {
             if ("admin".equals(oauthUser.getRole()) || "ADMIN".equals(oauthUser.getRole())) {
-                modelAndView.setViewName("redirect:/thongke/" + oauthUser.getId());
+                modelAndView.setViewName("redirect:/thongke/");
             } else {
-                modelAndView.setViewName("redirect:/" + oauthUser.getId());
+                modelAndView.setViewName("redirect:/home2");
             }
         } else {
             modelAndView.addObject("error", true);
-            modelAndView.addObject("errorMessage", "Tài khoản hoặc mật khẩu không đúng!!!");
             modelAndView.setViewName("login");
         }
 
         return modelAndView;
+    }
+
+    // @GetMapping("/home2")
+    // public String showhome2(Model model){
+    //     User user = userService2.;
+        
+    //     model.addAttribute("user", user);
+        
+    //     return "home2";
+    // }
+
+    @GetMapping("/home2")
+    public String home2(){
+        return "home2";
     }
 }

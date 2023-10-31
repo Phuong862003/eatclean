@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import eatclean.project.demo.enity.Login;
+import eatclean.project.demo.enity.User;
 import eatclean.project.demo.repository.LoginRepository;
 
 @Service
@@ -23,6 +24,10 @@ public class LoginService {
 
 	public void save(Login login){
 		repo.save(login);
+	}
+
+	public Login getById(int id){
+		return repo.findById(id);
 	}
 
 }
