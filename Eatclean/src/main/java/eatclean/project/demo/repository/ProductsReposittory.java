@@ -10,7 +10,12 @@ import eatclean.project.demo.enity.Products;
 
 @Repository
 public interface ProductsReposittory extends JpaRepository<Products, Long> {
-    // List<Products> findByLoaiSanPhamId(int cateID);
+    List<Products> findByNameContaining(String name);
 
     Optional<Products> findById(int id);
+
+    void deleteById(int id);
+
+    // List<Products> findByLoaiSanPhamId(int cateID);
+
 }

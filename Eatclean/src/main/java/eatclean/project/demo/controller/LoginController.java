@@ -30,20 +30,16 @@ public class LoginController {
     private UserService userService2;
 
     @GetMapping("/")
-    public String home(){
+    public String home() {
         return "home";
     }
 
-    
-
-    @GetMapping("/login")        
+    @GetMapping("/login")
     public ModelAndView login() {
         ModelAndView mav = new ModelAndView("login");
         mav.addObject("user", new Login());
         return mav;
     }
-
-    
 
     @PostMapping("/login")
     public ModelAndView login(@ModelAttribute("user") Login user) {
@@ -53,7 +49,7 @@ public class LoginController {
 
         if (Objects.nonNull(oauthUser)) {
             if ("admin".equals(oauthUser.getRole()) || "ADMIN".equals(oauthUser.getRole())) {
-                modelAndView.setViewName("redirect:/thongke/");
+                modelAndView.setViewName("redirect:/products/");
             } else {
                 modelAndView.setViewName("redirect:/home2");
             }
@@ -67,15 +63,15 @@ public class LoginController {
 
     // @GetMapping("/home2")
     // public String showhome2(Model model){
-    //     User user = userService2.;
-        
-    //     model.addAttribute("user", user);
-        
-    //     return "home2";
+    // User user = userService2.;
+
+    // model.addAttribute("user", user);
+
+    // return "home2";
     // }
 
     @GetMapping("/home2")
-    public String home2(){
+    public String home2() {
         return "home2";
     }
 }

@@ -24,101 +24,116 @@
     />
   </head>
   <style>
-    /*
-header{
-  font-family: Verdana;
-  font-weight: lighter;
-  text-shadow: 3px 3px 2px #AED2FF;
-  text-align: center;
-  color: #053B50;
-}
-*/
+    :root {
+      font-size: 62.5%;
+    }
 
-    /* Header */
+    .container {
+      width: 1400px;
+      max-width: 80%;
+      margin: auto;
+    }
 
-    header {
-      height: 100px;
-      background-color: #435334;
-      padding: 30px;
-      color: #fff;
+    .page1 {
+      width: 100vw;
+      height: 100vh;
+      background: url("https://media.istockphoto.com/id/1095313322/vi/anh/s%E1%BB%91t-c%C3%A0-chua-v%E1%BB%9Bi-c%C3%A1c-nguy%C3%AAn-li%E1%BB%87u.jpg?s=2048x2048&w=is&k=20&c=nSnosO9NfsSd5NQbjE9_bKec_FVbhvBhzqs_0BXLzxs=");
+      background-size: cover;
+    }
+
+    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-attachment: fixed;
+      padding: 30px 0;
+      padding: 10px;
     }
 
-    .logo img {
+    .navbar a {
+      width: 250px;
+      height: auto;
+    }
+
+    .navbar a img {
       width: 100%;
-      height: 150px;
-      object-fit: contain;
+      height: 100%;
     }
 
-    .topnav img {
-      width: 50px;
-      height: 50px;
+    .navbar ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
     }
 
-    .topnav input[type="text"] {
-      /* float: left; */
-      padding: 6px;
-      margin-top: 8px;
-      /* margin-right: 16px; */
-      border: none;
-      font-size: 25px;
-      width: 400px;
+    .navbar ul li a {
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-decoration: none;
+      color: #fff;
+      text-transform: uppercase;
     }
 
-    .topnav img {
-      width: 25px;
-      height: 30px;
-    }
-
-    /* Clear floats */
-
-    .topnav::after {
+    .navbar ul li a::after {
       content: "";
-      clear: both;
-      display: table;
+      width: 0%;
+      height: 1px;
+      background: #fff;
+      display: block;
+      margin: auto;
+      transition: 0.5s ease-in-out;
     }
 
-    .topnav button {
-      background-color: #435334;
+    .navbar ul li a:hover::after {
+      width: 100%;
+      color: red;
     }
 
-    .topnav li {
-      float: left;
-      padding-inline: 20px;
+    .logo a {
+      text-decoration: none;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #fff;
+      padding: 0 1.3rem;
     }
 
-    .tieu_de {
-      list-style-type: none;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      border-radius: 30px/80px;
+    .text {
+      position: relative;
+      top: 50%;
+      padding: 1rem 0;
     }
 
-    .tieu_de li {
-      display: inline-block;
-      font-size: 20px;
-      padding: 20px;
+    .text p {
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: #fff;
     }
 
-    .tieu_de span {
-      color: white;
+    .text h1 {
+      text-transform: uppercase;
+      font-size: 5.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2rem;
     }
 
-    .icon2 img {
-      width: 45px;
-      height: 45px;
+    .text .btn {
+      text-decoration: none;
+      border: 1px solid #fff;
+      padding: 15px 30px;
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #fff;
+      transition: 0.54s;
     }
 
-    .font {
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      color: #313866;
-      text-align: center;
-      text-shadow: 0 0 3px #0db7ea;
-      font-size: 20px;
+    .text .btn:hover {
+      background: #fff;
+      color: black;
     }
 
     .cart {
@@ -386,8 +401,15 @@ header{
       text-align: left;
     }
 
+    .font {
+    }
+
     .font h1 {
       padding-top: 15px;
+      {% comment %} border: 1px solid black; {% endcomment %}
+      width: 100%;
+      font-size: 35px;
+      text-align: center;
     }
 
     .container {
@@ -401,62 +423,37 @@ header{
   </style>
   <body bgcolor="#F3FDE8">
     <header>
-      <div class="logo">
-        <img src="../static/img/home/logoPage.png" alt="Logo" />
-      </div>
-      <div class="topnav">
-        <input type="text" placeholder="Tìm kiếm..." />
-        <button type="submit">
-          <img
-            src="https://icon-library.com/images/white-search-icon-png/white-search-icon-png-19.jpg"
-          />
-        </button>
-      </div>
-      <nav class="tieu_de">
-        <ul>
-          <li class="web">
-            <a href="index12.html" style="text-decoration: none">
-              <span><b>Trang chủ</b></span></a
-            >
-          </li>
-          <li>
-            <a href="index12.html" style="text-decoration: none"
-              ><span><b>Giới thiệu</b></span></a
-            >
-          </li>
-          <li>
-            <a href="index13.html" style="text-decoration: none"
-              ><span><b>Thực đơn</b></span></a
-            >
-          </li>
-          <li>
-            <a href="index13.html" style="text-decoration: none"
-              ><span><b>Liên hệ</b></span></a
-            >
-            &nbsp &nbsp &nbsp
-          </li>
-          <a href="gio_hang.html">
-            <li class="icon2">
-              <img
-                src="https://media.istockphoto.com/id/639811872/vi/vec-to/bi%E1%BB%83u-t%C6%B0%E1%BB%A3ng-gi%E1%BB%8F-h%C3%A0ng.jpg?s=170667a&w=0&k=20&c=-x6Ppwru9ZmRNHRQqEBjA2RR4sow8hhy21OFmA8Vxr0="
-              />
-            </li>
-          </a>
-          <li>
-            <a href="dangnhap.html">
-              <li class="icon2">
-                <img
-                  src="https://toppng.com/uploads/preview/black-and-white-stockportable-network-account-icon-11553436383dwuayhjyvo.png"
-                />
-              </li>
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <section class="page1">
+        <nav class="navbar container">
+          <a href="#"
+            ><img
+              src="https://eatcleanmealprep.com/wp-content/uploads/2020/11/eat-clean-meal-prep-logo.png"
+              alt=""
+          /></a>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a th:href="products">Menu</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About BMI</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <div class="logo">
+            <a href="login">Me</a>
+            <a href="#">My Cart</a>
+            <a href="search">My To-Do-List</a>
+          </div>
+        </nav>
+        <div class="text container">
+          <p>Welcome to</p>
+          <h1>EatClean Shop</h1>
+          <a href="#" class="btn">learn more</a>
+        </div>
+      </section>
     </header>
     <nav class="font">
       <div>
-        <h1>THÔNG TIN THỰC ĐƠN</h1>
+        <h1>Menu</h1>
       </div>
     </nav>
     <section class="cart">

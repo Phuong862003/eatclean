@@ -29,26 +29,29 @@ public class ProductsController {
         this.productsFormService = productsFormService;
     }
 
+    @GetMapping("/products")
+    public String search_products(@RequestParam(name = "keyword", required = false) String keyword, Model model) {
+        List<Products> products = productsFormService.search_products(keyword);
+        model.addAttribute("product", products);
+        model.addAttribute("keyword", keyword != null ? keyword : "");
+        return "products";
+    }
+
     // @GetMapping("/products")
-    // public String search_products(@RequestParam(name = "keyword", required =
-    // false) String keyword, Model model) {
-    // List<Products> products = productsFormService.search_products(keyword);
-    // model.addAttribute("products", products);
-    // model.addAttribute("keyword", keyword != null ? keyword : "");
+    // public String listProducts(Model model) {
+    // model.addAttribute("product", productsFormService.listAll());
     // return "products";
     // }
-
-
 
     @GetMapping("/products/new")
     public String createProductsForm(Model model) {
         Products product = new Products();
-        model.addAttribute("products", product);
+        model.addAttribute("product", product);
         return "create_products";
     }
 
     @PostMapping("/products")
-    public String saveProducts(@ModelAttribute("products") Products product) {
+    public String saveProducts(@ModelAttribute("product") Products product) {
         productsFormService.saveProducts(product);
         return "redirect:/products";
     }
@@ -56,13 +59,13 @@ public class ProductsController {
     // sửa
     @GetMapping("/products/edit/{id}")
     public String editProductsForm(@PathVariable int id, Model model) {
-        model.addAttribute("products", productsFormService.getProductsById(id));
+        model.addAttribute("product", productsFormService.getProductsById(id));
         return "edit_products";
     }
 
     // update
     @PostMapping("/products/{id}")
-    public String updateProducts(@PathVariable int id, @ModelAttribute("products") Products product, Model model) {
+    public String updateProducts(@PathVariable int id, @ModelAttribute("product") Products product, Model model) {
         // get products from database by id
         Products existingProducts = productsFormService.getProductsById(id);
         existingProducts.setId(id);

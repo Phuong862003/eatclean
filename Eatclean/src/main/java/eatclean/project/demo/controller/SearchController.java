@@ -18,10 +18,10 @@ public class SearchController {
     private SearchProService searchProService;
 
     @GetMapping("/search")
-    public String search(@RequestParam(name = "keyword", required = false) String keyword, Model model){
+    public String search(@RequestParam(name = "keyword", required = false) String keyword, Model model) {
         List<Products> products = searchProService.search(keyword);
         model.addAttribute("products", products);
-        model.addAttribute("keyword", keyword!=null ? keyword : "");
+        model.addAttribute("keyword", keyword != null ? keyword : "");
         return "search";
     }
 }
