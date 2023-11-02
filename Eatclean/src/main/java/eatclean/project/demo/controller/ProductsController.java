@@ -32,7 +32,7 @@ public class ProductsController {
     public String show_Products( Model model) {
         List<Products> products = productsFormService.show_Products();
         model.addAttribute("products", products);
-        return "/home";
+        return "home";
     }
     @GetMapping("/products")
     public String search_products(@RequestParam(name = "keyword", required = false) String keyword, Model model) {
