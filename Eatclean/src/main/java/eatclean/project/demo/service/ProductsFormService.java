@@ -26,7 +26,7 @@ public class ProductsFormService {
     }
 
     public void delete(int id) {
-        productsReposittory.deleteById((long) id);
+        productsReposittory.deleteById( id);
     }
 
     // public List<Products> listByCategory(int cateID) {

@@ -51,4 +51,8 @@ public class SearchProService {
     private String processImageUrl(String imageUrl) {
         return null;
     }
+
+    public Products getById(int id){
+        return productsRepository.findById(id).get();
+    }
 }

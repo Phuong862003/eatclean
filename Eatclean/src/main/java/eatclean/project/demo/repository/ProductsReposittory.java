@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import eatclean.project.demo.enity.Products;
 
 @Repository
-public interface ProductsReposittory extends JpaRepository<Products, Long> {
+public interface ProductsReposittory extends JpaRepository<Products, Integer> {
     List<Products> findByNameContaining(String name);
 
     Optional<Products> findById(int id);

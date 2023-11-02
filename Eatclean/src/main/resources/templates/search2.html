@@ -13,7 +13,8 @@
         function findBook() {
             let keywordInput = document.querySelector(".input100");
             let keyword = keywordInput.value;
-            window.location = "/search?keyword=" + keyword;
+            window.location.href = /*[[@{'/search2/' + login.id + '?keyword=' + keyword}]]*/'';
+
         }
     </script>
 </head>
@@ -61,7 +62,7 @@
                         <p><span th:text="${product.status}"></span></p>
                         <p class="sp_gia" style="font-weight: bold;font-size: 20px; color: black;">Giá: <span class="giakm" style="font-size: 20pt; color: red;" th:text="${product.price}"> đ</span></p>
                         <div style="width: 150px; border: 1px solid black; margin-bottom: 20px; margin-top: 20px; margin-left: 90px; position: absolute;">
-                            <a href="login" class="xct" style="width: 100px;">Đặt hàng</a>
+                            <a th:href="@{/dathang/{userId}/{productId}(userId=${login.id}, productId=${product.id})}" class="xct" style="width: 100px;">Đặt hàng</a>
                         </div>
                     </div>
                 </a>

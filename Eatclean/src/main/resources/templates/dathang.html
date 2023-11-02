@@ -26,6 +26,7 @@
         <style type="text/css">img {max-width: 100%;} img.lazyload{ opacity: 0.001; object-fit: scale-down !important; } .fb-customerchat>span>iframe.fb_customer_chat_bounce_out_v2 {max-height: 0 !important;}  .fb-customerchat>span>iframe.fb_customer_chat_bounce_in_v2{max-height: calc(100% - 80px) !important;}</style>
         <script src="https://pos.nvnstatic.net/cache/location.vn.js?v=231013_172145" defer></script>
         <script src="https://web.nvnstatic.net/js/lazyLoad/lazysizes.min.js" async></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
         <style>figure.image{clear: both;display: table;margin: .9em auto;min-width: 50px;text-align: center;width: auto !important;}figure.image img {display: block;margin: 0 auto;max-width: 100%;min-width: 100%;}figure.image>figcaption {background-color: #f7f7f7;caption-side: bottom;color: #333;display: table-caption;font-size: .75em;outline-offset: -1px;padding: .6em;word-break: break-word;}figure.image img, img.image_resized {height: auto !important;aspect-ratio: auto !important;}</style>
         <script src="https://web.nvnstatic.net/js/translate/vi-vn.js" defer></script>
     </head>
@@ -41,11 +42,13 @@
         <link rel="stylesheet" href="https://web.nvnstatic.net/js/jquery/fancybox-2.1.5/source/jquery.fancybox.css?v=2" type="text/css">
         <div class="banner">
             <div class="wrap">
-                <div class="shop logo logo--left "><h1 class="shop__name">
-                    <a href="/">
-                        <img src="C:\Users\84973\Downloads\logoPage (1).png" alt="">
-                    </a>
-                </h1>
+                <ul th:each="login : ${login}" >
+                    <div class="shop logo logo--left "><h1 class="shop__name">
+                        <a th:href="@{/home2/{id}(id=${login.id})}">
+                            <img src="C:\Users\84973\Downloads\logoPage (1).png" alt="">
+                        </a>
+                    </h1>
+                </ul>
             </div>
         </div>
     </div>
@@ -67,7 +70,7 @@
             </a>
         </div>
     </button>
-    <form id="formCheckout" class="validate content stateful-form formCheckout" method="post">
+    <form id="formCheckout" class="validate content stateful-form formCheckout" method="post" th:object="${product}">
         <div class="wrap">
             <div class="sidebar">
                 <div class="sidebar_header">
@@ -75,9 +78,6 @@
                         <label class="control-label">
                             Đơn hàng
                         </label> 
-                        <label class="control-label">
-                            (1 Sản phẩm)
-                        </label>
                     </h2>
                     <hr class="full_width">
                 </div>
@@ -85,24 +85,22 @@
                     <div class="order-summary order-summary--product-list order-summary--is-collapsed collapse" aria-expanded="false">
                         <div class="summary-body summary-section summary-product">
                             <div class="summary-product-list">
-                                <table class="product-table">
+                                <table th:each="product : ${products}" class="product-table">
                                     <tr class="product product-has-image clearfix">
                                         <td>
                                             <div class="product-thumbnail">
                                                 <div class="product-thumbnail__wrapper"> 
-                                                    <img src="c:\Users\84973\Downloads\item1.jpg" class="product-thumbnail__image">
+                                                    <img th:src="@{${product.image}}" alt="img" class="product-thumbnail__image">
                                                 </div>
-                                                <span class="product-thumbnail__quantity" aria-hidden="true">
-                                                    1
-                                                </span>
+                                                
+                                                <p><span th:text="${product.quantity}" class="product-thumbnail__quantity" aria-hidden="true"></span></p>
                                             </div>
                                         </td>
                                         <td class="product-info">
-                                            <span class="product-info-name">Salad cá hồi
-                                            </span>
+                                            <span th:text="${product.name}" class="product-info-name"></span>
                                         </td>
                                         <td class="product-price text-right">
-                                            80,000₫
+                                           <span th:text="${product.price}"></span> 
                                         </td>
                                     </tr>
                                 </table>
@@ -130,14 +128,23 @@
                         </div>
                         <hr class="m0">
                     </div>
-                    <div class="order-summary order-summary--total-lines">
+                    <div th:each="product : ${products}" class="order-summary order-summary--total-lines">
                         <div class="summary-section border-top-none--mobile">
                             <div class="total-line total-line-subtotal clearfix">
                                 <span class="total-line-name pull-left">
                                     Tạm tính                            
                                 </span>
-                                <span class="total-line-subprice pull-right">
-                                    80,000₫                            
+                                <span class="total-line-subprice pull-right" th:text="${product.price}">
+                                                              
+                                </span>
+                            </div>
+                            <div class="total-line total-line-shipping clearfix" style="display: flex;">
+                                <span  style="width: 60%;">
+                                    Số lượng                           
+                                </span>
+                                
+                                <span style="width: 200px;">
+                                    <input id="quantityInput" style="margin-left: 150px; width: 30px; border-color: rgb(185, 184, 184); height: 30px;" class="quantity-input">
                                 </span>
                             </div>
                             <div class="total-line total-line-shipping clearfix">
@@ -181,40 +188,41 @@
                                     0₫
                                 </span>
                             </div>
-                            <div
-                            class="total-line total-line-total clearfix">
-                            <span class="total-line-name pull-left">
-                                Tổng cộng                            
-                            </span>
-                            <span id="totalMoney" class="total-line-price pull-right" value="280000">
-                                80,000₫
-                            </span>
-                        </div>
+                            <div class="total-line total-line-total clearfix">
+                                <span class="total-line-name pull-left">
+                                    Tổng cộng
+                                </span>
+                                <span id="totalMoney" class="total-line-price pull-right" value="0">
+                                    0₫
+                                </span>
+                            </div>
                     </div>
                 </div>
                 <div class="form-group clearfix hidden-sm hidden-xs">
                     <div class="field__input-btn-wrapper mt10"> 
-                        <a class="previous-link" href="/cart">
+                        <a class="previous-link" href="home2.html">
                             <i class="fa fa-angle-left fa-lg" aria-hidden="true">
                             </i>
                             <span>
                                 Quay về giỏ hàng
                             </span>
                         </a>
-                        <input class="btn btn-success btn-checkout tp_button" data-loading-text="Đang xử lý" type="button" value="Đặt hàng">
+                        <input id="confirmButton" data-loading-text="Đang xử lý" type="button" value="Xác nhận" style="background-color: green; color: #f7f7f7; width: 100px; height: 30px;">
                     </div>
                 </div>
             </div>
         </div>
         <div class="main" role="main">
             <div class="main_header">
-                <div class="shop logo logo--left ">
-                    <h1 class="shop__name">
-                        <a href="/"> 
-                            <img src="C:\Users\84973\Downloads\logoPage (1).png" alt="logo">
-                        </a>
-                    </h1>
-                </div>
+                <ul th:each="login : ${login}">
+                    <div class="shop logo logo--left ">
+                        <h1 class="shop__name">
+                            <a th:href="@{/home2/{id}(id=${login.id})}"> 
+                                <img src="C:\Users\84973\Downloads\logoPage (1).png" alt="logo">
+                            </a>
+                        </h1>
+                    </div>
+                </ul>
             </div>
             <div class="main_content">
                 <div class="row">
@@ -232,20 +240,20 @@
                                     <a href="/profile" class="layout-flex__item section__title--link">
                                         <i class="fa fa-user-circle-o fa-lg" aria-hidden="true">
                                         </i>
-                                        ngattran                                        
+                                                                               
                                     </a>
                                 </div>
                             </div>
-                            <div class="section__content">
+                            <div th:each="user : ${user}" class="section__content">
                                 <in class="billing">
                                     <div class="form-group">
                                         <div class="field__input-wrapper">
-                                            <input type="text" name="customerName" id="customerName" required="" class="field__input form-control validate[required]" value="ngattran" placeholder="Họ và tên">
+                                            <input type="text" name="customerName" id="customerName" required="" class="field__input form-control validate[required]"  placeholder="Họ và tên" th:value="${user.name}">
                                         </div>
                                     </div>
                                     <div class="form-group" > 
                                         <label class="field__input-wrapper">
-                                            <input name="customerEmail" id="customerEmail" type="email" class="field__input form-control   " value="nt156969@gmail.com" placeholder="Email">
+                                            <input name="customerEmail" id="customerEmail" type="email" class="field__input form-control   " placeholder="Email" th:value="${user.email}">
                                             <span class="field__label">
                                             </span> 
                                         </label>
@@ -254,7 +262,7 @@
                                         <div class="field__input-wrapper">
                                             <input name="customerMobile" id="customerMobile" type="text"
                                             class="field__input form-control validate[required,custom[phone]]"
-                                            value="0365819803" placeholder="Điện thoại">
+                                            value="" placeholder="Điện thoại">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -262,90 +270,7 @@
                                             <input name="customerAddress" id="customerAddress" type="text" class="field__input form-control validate[required]" value="" placeholder=" Địa chỉ ">
                                         </div>
                                     </div>
-                                    <!-- <div class="form-group city">
-                                        <div class="field__input-wrapper field__input-wrapper--select">
-                                            <select class="field__input field__input--select form-control validate[required]" name="customerCityId" id="customerCityId" required="">
-                                                <option value="">---Chọn Tỉnh/ thành phố---</option>
-                                                <option value='254'>Hà Nội</option>
-                                                <option value='255'>Hồ Chí Minh</option>
-                                                <option value='256'>An Giang</option>
-                                                <option value='257'>Bà Rịa - Vũng Tàu</option>
-                                                <option value='258'>Bắc Ninh</option>
-                                                <option value='259'>Bắc Giang</option>
-                                                <option value='260'>Bình Dương</option>
-                                                <option value='261'>Bình Định</option>
-                                                <option value='262'>Bình Phước</option>
-                                                <option value='263'>Bình Thuận</option>
-                                                <option value='264'>Bến Tre</option>
-                                                <option value='265'>Bắc Cạn</option>
-                                                <option value='266'>Cần Thơ</option>
-                                                <option value='267'>Khánh Hòa</option>
-                                                <option value='268'>Thừa Thiên Huế</option>
-                                                <option value='269'>Lào Cai</option>
-                                                <option value='270'>Quảng Ninh</option>
-                                                <option value='271'>Đồng Nai</option>
-                                                <option value='272'>Nam Định</option>
-                                                <option value='273'>Cà Mau</option>
-                                                <option value='274'>Cao Bằng</option>
-                                                <option value='275'>Gia Lai</option>
-                                                <option value='276'>Hà Giang</option>
-                                                <option value='277'>Hà Nam</option>
-                                                <option value='278'>Hà Tĩnh</option>
-                                                <option value='279'>Hải Dương</option>
-                                                <option value='280'>Hải Phòng</option>
-                                                <option value='281'>Hòa Bình</option>
-                                                <option value='282'>Hưng Yên</option>
-                                                <option value='283'>Kiên Giang</option>
-                                                <option value='284'>Kon Tum</option>
-                                                <option value='285'>Lai Châu</option>
-                                                <option value='286'>Lâm Đồng</option>
-                                                <option value='287'>Lạng Sơn</option>
-                                                <option value='288'>Long An</option>
-                                                <option value='289'>Nghệ An</option>
-                                                <option value='290'>Ninh Bình</option>
-                                                <option value='291'>Ninh Thuận</option>
-                                                <option value='292'>Phú Thọ</option>
-                                                <option value='293'>Phú Yên</option>
-                                                <option value='294'>Quảng Bình</option>
-                                                <option value='295'>Quảng Nam</option>
-                                                <option value='296'>Quảng Ngãi</option>
-                                                <option value='297'>Quảng Trị</option>
-                                                <option value='298'>Sóc Trăng</option>
-                                                <option value='299'>Sơn La</option>
-                                                <option value='300'>Tây Ninh</option>
-                                                <option value='301'>Thái Bình</option>
-                                                <option value='302'>Thái Nguyên</option>
-                                                <option value='303'>Thanh Hóa</option>
-                                                <option value='304'>Tiền Giang</option>
-                                                <option value='305'>Trà Vinh</option>
-                                                <option value='306'>Tuyên Quang</option>
-                                                <option value='307'>Vĩnh Long</option>
-                                                <option value='308'>Vĩnh Phúc</option>
-                                                <option value='309'>Yên Bái</option>
-                                                <option value='310'>Đắk Lắk</option>
-                                                <option value='311'>Đồng Tháp</option>
-                                                <option value='312'>Đà Nẵng</option>
-                                                <option value='313'>Đắc Nông</option>
-                                                <option value='314'>Hậu Giang</option>
-                                                <option value='315'>Bạc Liêu</option>
-                                                <option value='316'>Điện Biên</option>
-                                            </select>
-                                        </div>
-                                    </div> -->
-                                    <!-- <div class="form-group district">
-                                        <div class="field__input-wrapper field__input-wrapper--select"> 
-                                            <select class="field__input field__input--select form-control validate[required]" name="customerDistrictId" id="customerDistrictId">
-                                                <option value="">--- Chọn Quận/ Huyện---</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group district">
-                                        <div class="field__input-wrapper field__input-wrapper--select"> 
-                                            <select class="field__input field__input--select form-control validate[required]" name="wardId" id="wardId">
-                                                <option value="">--- Chọn Phường/ Xã---</option>
-                                            </select>
-                                        </div>
-                                    </div> -->
+                                    
                                 </div>
                             </div>
                             <div class="section pt10">
@@ -394,9 +319,20 @@
                             </div>
                         </div>
                         <div class="section hidden-md hidden-lg">
-                            <div class="form-group clearfix m0">
-                                <input class="btn btn-primary btn-checkout tp_button" data-loading-text="Đang xử lý" type="button" value="Đặt hàng">
-                            </div>
+                            <form th:action="@{/dathang}" method="post">
+                                <!-- Các trường thông tin sản phẩm và người dùng -->
+                                <input type="hidden" id="userId" name="userId" value="${user.id}">
+                                <input type="hidden" id="productId" name="productId" value="${product.id}">
+                                <input type="hidden" id="quantity" name="quantity" >
+                            
+                                <div class="form-group clearfix m0">
+                                    <input id="orderButton" class="btn btn-primary btn-checkout tp_button" data-loading-text="Đang xử lý"
+                                           type="submit" value="Đặt hàng">
+                                </div>
+                            </form>
+                            
+                            
+                            
                             <div class="text-center mt20">
                                 <a class="previous-link" href="/cart"> 
                                     <i class="fa fa-angle-left fa-lg" aria-hidden="true">
@@ -427,4 +363,63 @@
                     <input type="hidden" value="eNt2fSITgCw7drtTGKUCMVvh2ElFuVViOpN4PVWAFohecWsaM1cF4tgoUMXGwykGaO8JII1Om4Wi7jytxackTvezNruiLxUIWihYrDD4xO5BjIHHprl6EMqyMudNpGxZ4pHl9oRSMMKxm7anXWXrYh6xoWlEfQjYGPIyjmvg5pzIRvX2etBmR9" id="uctk" name="uctk" />
                     <input type="hidden" id="clienIp" value="1.53.8.223">
                 </body>
-                </html>
+                <script>
+                   document.getElementById('confirmButton').addEventListener('click', function () {
+                    // Lấy giá trị số lượng từ trường input
+                    const quantityInput = document.querySelector('.quantity-input');
+                    const quantity = parseInt(quantityInput.value);
+
+                    // Lấy giá trị số lượng gốc từ phần tử hiển thị
+                    const originalQuantity = parseInt(document.querySelector('.product-thumbnail__quantity').innerText);
+
+                    // Kiểm tra điều kiện
+                    if (quantity > originalQuantity || quantity < 1) {
+                        alert('Số lượng không hợp lệ!');
+                        return; // Dừng xử lý nếu có lỗi
+                    }
+
+                    // Lấy giá trị tạm tính từ phần tử hiển thị
+                    const unitPrice = parseFloat(document.querySelector('.total-line-subprice').innerText.replace('₫', '').replace(',', ''));
+
+                    // Tính tổng cộng
+                    const totalPrice = quantity * unitPrice;
+
+                    // Cập nhật giá trị tổng cộng trong phần tử hiển thị
+                    document.getElementById('totalMoney').innerText = totalPrice.toLocaleString() + '₫';
+                });
+
+                document.getElementById('orderButton').addEventListener('click', function () {
+                    // Lấy giá trị số lượng từ trường input
+                    const quantityInput = document.getElementById('quantityInput');
+                    const quantity = parseInt(quantityInput.value);
+
+                    // Kiểm tra xem giá trị có phải là số hợp lệ không
+                    if (!isNaN(quantity)) {
+                        // Lưu giá trị vào trường ẩn trong form
+                        document.getElementById('quantity').value = quantity;
+                    } else {
+                        // Xử lý khi giá trị không phải là một số hợp lệ
+                        console.error('Invalid quantity value');
+                    }
+                });
+
+
+
+
+                </script>
+                <script th:inline="javascript">
+                    /*<![CDATA[*/ 
+                    document.addEventListener("DOMContentLoaded", function() {
+                        // Kiểm tra xem có thông báo không
+                        var message = /*[[${message}]]*/ '';
+                        
+                        if (message) {
+                            // Hiển thị alert nếu có thông báo
+                            alert(message);
+                        }
+                    });
+                    /*]]>*/
+                </script>
+               
+
+</html>

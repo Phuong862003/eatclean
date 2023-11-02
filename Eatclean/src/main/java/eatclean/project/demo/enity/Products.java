@@ -46,29 +46,28 @@ public class Products {
     @Column(name = "metaDescriptions")
     private String metaDescriptions;
 
-    @Column(name = "createdBy")
-    private Integer createdBy;
+    // @Column(name = "createdBy")
+    // private Integer createdBy;
 
-    @Column(name = "createdDate")
-    private String createdDate;
+    // @Column(name = "createdDate")
+    // private String createdDate;
 
-    @Column(name = "updateBy")
-    private int updateBy;
+    // @Column(name = "updateBy")
+    // private int updateBy;
 
-    @Column(name = "updateDate")
-    private String updateDate;
+    // @Column(name = "updateDate")
+    // private String updateDate;
 
     public Products() {
         // super();
     }
 
-    // public Products(int id, String name, String image, int quantity, float price)
-    // {
-    // this.id = id;
-    // this.name = name;
-    // this.image = image;
-    // this.quantity = quantity;
-    // this.price = price;
+    // public Products(int id, String name, String image, int quantity, float price) {
+    //     this.id = id;
+    //     this.name = name;
+    //     this.image = image;
+    //     this.quantity = quantity;
+    //     this.price = price;
     // }
 
     public Products(int id, String name, String status, String description, float price, String image,
@@ -83,7 +82,7 @@ public class Products {
         this.quantity = quantity;
         this.metaKeywords = metaKeywords;
         this.metaDescriptions = metaDescriptions;
-
+        
     }
 
     public int getId() {
@@ -150,9 +149,6 @@ public class Products {
         this.categories = categories;
     }
 
-    public void setCategory(Object findById) {
-    }
-
     public String getMetaKeywords() {
         return metaKeywords;
     }
@@ -168,5 +164,9 @@ public class Products {
     public void setMetaDescriptions(String metaDescriptions) {
         this.metaDescriptions = metaDescriptions;
     }
+
+   
+
+    
 
 }

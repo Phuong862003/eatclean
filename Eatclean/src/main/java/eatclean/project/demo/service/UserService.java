@@ -40,8 +40,8 @@ public class UserService {
         userRepository.save(newUser);
     }
 
-    public User getLoginId(int id){
-        return userRepository.findByLoginId(id).get(id);
+    public User getUserByLoginId(int loginId) {
+        return userRepository.findByLoginId(loginId);
     }
 
     public User getUserById(int id){

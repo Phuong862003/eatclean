@@ -243,16 +243,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-9 col-md-9 col-sm-8 profileRight">
+                <div th:each="user: ${user}" class="col-12 col-lg-9 col-md-9 col-sm-8 profileRight">
                     <div id="profileContent">
                         <h3>
-                            ABC
+                            <span th:text="${user.name}" aria-hidden="true"></span>
                         </h3>
                         <p>
                             <b>
                                 Email:
                             </b> 
-                            nt156969@gmail.com
+                            <span th:text="${user.email}" aria-hidden="true"></span>
                         </p>
                         <p>
                             <b>

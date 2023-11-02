@@ -49,9 +49,10 @@ public class LoginController {
 
         if (Objects.nonNull(oauthUser)) {
             if ("admin".equals(oauthUser.getRole()) || "ADMIN".equals(oauthUser.getRole())) {
-                modelAndView.setViewName("redirect:/products/");
+                modelAndView.setViewName("redirect:/thongke/");
             } else {
-                modelAndView.setViewName("redirect:/home2");
+                int userID = oauthUser.getId();
+                modelAndView.setViewName("redirect:/home2/" + userID);
             }
         } else {
             modelAndView.addObject("error", true);
@@ -70,8 +71,13 @@ public class LoginController {
     // return "home2";
     // }
 
-    @GetMapping("/home2")
-    public String home2() {
+    @GetMapping("/home2/{id}")
+    public String showhome2(@PathVariable int id, Model model) {
+        Login login = userService.getById(id);
+        // User user = userService2.getUserById(id);
+        model.addAttribute("login", login);
+        // model.addAttribute("user", user);
         return "home2";
+        
     }
 }
