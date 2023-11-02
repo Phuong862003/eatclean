@@ -22,6 +22,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../static/css/home.css" />
+    <script>
+      function findBook() {
+        let keywordInput = document.querySelector(".input100");
+        let keyword = keywordInput.value;
+        window.location = "/search?keyword=" + keyword;
+      }
+    </script>
   </head>
   <style>
     .row{
@@ -69,6 +76,15 @@
         width: 30px;
         height: 30px;
         margin-left: 3px;
+    }
+
+    .container-fluid img{
+      width: 70px;
+      height: 70px;
+    }
+
+    .container-fluid td{
+      font-size: 20px;
     }
   </style>
 
@@ -137,7 +153,7 @@
         <tbody>
           <tr th:each="product : ${product}">
             <td th:text="${product.id}"></td>
-            <td th:text="${product.image}"></td>
+            <td><img th:src="${product.image}" /></td>
             <td th:text="${product.name}"></td>
             <td th:text="${product.quantity}"></td>
             <td th:text="${product.price}"></td>
@@ -145,14 +161,14 @@
               <a
                 th:href="@{/products/edit/{id}(id=${product.id})}"
                 class="btn btn-primary"
-                >Update</a
-              >
+                ><i class="fa-solid fa-pen-to-square" style="color: #f7f7f8"></i
+              ></a>
 
               <a
                 th:href="@{/products/{id}(id=${product.id})}"
                 class="btn btn-danger"
-                >Delete</a
-              >
+                ><i class="fa-solid fa-trash-can" style="color: #f1f2f4"></i
+              ></a>
             </td>
           </tr>
         </tbody>

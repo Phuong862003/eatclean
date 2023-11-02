@@ -1,13 +1,9 @@
-function scrollLeft() {
-  document.querySelector(".horizontal-scroll-container").scrollBy({
-    left: -200,
-    behavior: "smooth"
-  });
-}
+document.getElementById("learn-more-btn").addEventListener("click", function() {
+  document.getElementById("banner").scrollIntoView({behavior: "smooth"});
+});
+document.getElementById("shop-now-btnn").addEventListener("click", function() {
+  document.getElementById("products").scrollIntoView({behavior: "smooth"});
+});
 
-function scrollRight() {
-  document.querySelector(".horizontal-scroll-container").scrollBy({
-    left: 200,
-    behavior: "smooth"
-  });
-}
+
+

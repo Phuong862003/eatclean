@@ -40,6 +40,7 @@ public class Products {
     @Column(name = "quantity")
     private int quantity;
 
+<<<<<<< HEAD
     @Column(name = "metaKeywords")
     private String metaKeywords;
 
@@ -58,6 +59,8 @@ public class Products {
     // @Column(name = "updateDate")
     // private String updateDate;
 
+=======
+>>>>>>> 3fffb76f9a21d95496e6ff2bfac7120e14d289ce
     public Products() {
         // super();
     }
@@ -71,7 +74,7 @@ public class Products {
     // }
 
     public Products(int id, String name, String status, String description, float price, String image,
-            Categories categories, int quantity, String metaKeywords, String metaDescriptions) {
+            Categories categories, int quantity) {
         this.id = id;
         this.name = name;
         this.status = status;
@@ -80,9 +83,13 @@ public class Products {
         this.image = image;
         this.categories = categories;
         this.quantity = quantity;
+<<<<<<< HEAD
         this.metaKeywords = metaKeywords;
         this.metaDescriptions = metaDescriptions;
         
+=======
+
+>>>>>>> 3fffb76f9a21d95496e6ff2bfac7120e14d289ce
     }
 
     public int getId() {
@@ -149,6 +156,7 @@ public class Products {
         this.categories = categories;
     }
 
+<<<<<<< HEAD
     public String getMetaKeywords() {
         return metaKeywords;
     }
@@ -169,4 +177,9 @@ public class Products {
 
     
 
+=======
+    public void setCategory(Object findById) {
+    }
+
+>>>>>>> 3fffb76f9a21d95496e6ff2bfac7120e14d289ce
 }
