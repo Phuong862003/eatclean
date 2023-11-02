@@ -17,8 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import org.springframework.ui.Model;
 import eatclean.project.demo.enity.Login;
+import eatclean.project.demo.enity.Products;
 import eatclean.project.demo.enity.User;
 import eatclean.project.demo.service.LoginService;
+import eatclean.project.demo.service.SearchProService;
 import eatclean.project.demo.service.UserService;
 
 @Controller
@@ -28,6 +30,9 @@ public class LoginController {
 
     @Autowired
     private UserService userService2;
+
+    @Autowired
+    private SearchProService searchProService;
 
     @GetMapping("/")
     public String home() {
@@ -49,7 +54,7 @@ public class LoginController {
 
         if (Objects.nonNull(oauthUser)) {
             if ("admin".equals(oauthUser.getRole()) || "ADMIN".equals(oauthUser.getRole())) {
-                modelAndView.setViewName("redirect:/thongke/");
+                modelAndView.setViewName("redirect:/products");
             } else {
                 int userID = oauthUser.getId();
                 modelAndView.setViewName("redirect:/home2/" + userID);
@@ -74,10 +79,12 @@ public class LoginController {
     @GetMapping("/home2/{id}")
     public String showhome2(@PathVariable int id, Model model) {
         Login login = userService.getById(id);
-        // User user = userService2.getUserById(id);
+        
         model.addAttribute("login", login);
-        // model.addAttribute("user", user);
+        
         return "home2";
         
     }
+
+    
 }

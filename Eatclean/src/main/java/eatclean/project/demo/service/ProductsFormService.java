@@ -26,11 +26,9 @@ public class ProductsFormService {
     }
 
     public void delete(int id) {
-<<<<<<< HEAD
+
         productsReposittory.deleteById( id);
-=======
-        productsReposittory.deleteById((int) id);
->>>>>>> 3fffb76f9a21d95496e6ff2bfac7120e14d289ce
+
     }
 
     // public List<Products> listByCategory(int cateID) {

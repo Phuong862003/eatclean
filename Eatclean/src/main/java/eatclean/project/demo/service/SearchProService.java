@@ -55,4 +55,18 @@ public class SearchProService {
     public Products getById(int id){
         return productsRepository.findById(id).get();
     }
+
+    public List <Products> getAll(){
+       List<Products> products = productsRepository.findAll();
+       for (Products product : products) {
+                String imageUrl = product.getImage();
+                if (isNotBlank(imageUrl)) {
+                    product.setImage(processImageUrl(imageUrl));
+                } else {
+                    imageUrl = "https://znews-photo.zingcdn.me/w660/Uploaded/natmts/2023_02_03/z4080571344877_dcc05eb033d9e910039ad77df6eb1b05.jpg";
+                }
+                product.setImage(imageUrl);
+            }
+            return products;
+    }
 }

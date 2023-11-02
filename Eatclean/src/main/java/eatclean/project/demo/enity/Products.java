@@ -40,27 +40,7 @@ public class Products {
     @Column(name = "quantity")
     private int quantity;
 
-<<<<<<< HEAD
-    @Column(name = "metaKeywords")
-    private String metaKeywords;
 
-    @Column(name = "metaDescriptions")
-    private String metaDescriptions;
-
-    // @Column(name = "createdBy")
-    // private Integer createdBy;
-
-    // @Column(name = "createdDate")
-    // private String createdDate;
-
-    // @Column(name = "updateBy")
-    // private int updateBy;
-
-    // @Column(name = "updateDate")
-    // private String updateDate;
-
-=======
->>>>>>> 3fffb76f9a21d95496e6ff2bfac7120e14d289ce
     public Products() {
         // super();
     }
@@ -83,13 +63,7 @@ public class Products {
         this.image = image;
         this.categories = categories;
         this.quantity = quantity;
-<<<<<<< HEAD
-        this.metaKeywords = metaKeywords;
-        this.metaDescriptions = metaDescriptions;
-        
-=======
 
->>>>>>> 3fffb76f9a21d95496e6ff2bfac7120e14d289ce
     }
 
     public int getId() {
@@ -156,30 +130,10 @@ public class Products {
         this.categories = categories;
     }
 
-<<<<<<< HEAD
-    public String getMetaKeywords() {
-        return metaKeywords;
-    }
 
-    public void setMetaKeywords(String metaKeywords) {
-        this.metaKeywords = metaKeywords;
-    }
 
-    public String getMetaDescriptions() {
-        return metaDescriptions;
-    }
-
-    public void setMetaDescriptions(String metaDescriptions) {
-        this.metaDescriptions = metaDescriptions;
-    }
-
-   
-
-    
-
-=======
     public void setCategory(Object findById) {
     }
 
->>>>>>> 3fffb76f9a21d95496e6ff2bfac7120e14d289ce
+
 }
