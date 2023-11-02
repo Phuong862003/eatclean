@@ -28,7 +28,12 @@ public class ProductsController {
         // super();
         this.productsFormService = productsFormService;
     }
-
+    @GetMapping("/home")
+    public String show_Products( Model model) {
+        List<Products> products = productsFormService.show_Products();
+        model.addAttribute("products", products);
+        return "/home";
+    }
     @GetMapping("/products")
     public String search_products(@RequestParam(name = "keyword", required = false) String keyword, Model model) {
         List<Products> products = productsFormService.search_products(keyword);

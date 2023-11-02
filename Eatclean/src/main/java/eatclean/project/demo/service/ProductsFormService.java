@@ -53,7 +53,10 @@ public class ProductsFormService {
 
         }
     }
-
+    public List<Products> show_Products() {
+        List<Products> product = productsReposittory.findAll();
+        return product;
+    }
     private List<Products> productsReposittoryRfindByNameContainingg(String keyword) {
         return null;
     }
