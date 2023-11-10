@@ -22,10 +22,7 @@ public class SearchController {
 
     @Autowired
     private LoginService loginService;
-<<<<<<< HEAD
-=======
 
->>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
     @GetMapping("/search")
     public String search(@RequestParam(name = "keyword", required = false) String keyword, Model model) {
         List<Products> products = searchProService.search(keyword);
@@ -47,13 +44,7 @@ public class SearchController {
         model.addAttribute("login", login);
         return "search2";
     }
-<<<<<<< HEAD
 
-    
-
-
-=======
->>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
 }
 
 

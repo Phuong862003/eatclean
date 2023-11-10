@@ -2,7 +2,7 @@ package eatclean.project.demo.service;
 
 import java.util.List;
 
-import javax.ws.rs.Produces;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -56,8 +56,7 @@ public class SearchProService {
     public Products getById(int id){
         return productsRepository.findById(id).get();
     }
-<<<<<<< HEAD
-=======
+
 
     public List <Products> getAll(){
        List<Products> products = productsRepository.findAll();
@@ -72,5 +71,5 @@ public class SearchProService {
             }
             return products;
     }
->>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
+
 }

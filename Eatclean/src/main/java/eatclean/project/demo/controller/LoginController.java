@@ -46,10 +46,6 @@ public class LoginController {
         return mav;
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
     @PostMapping("/login")
     public ModelAndView login(@ModelAttribute("user") Login user) {
         Login oauthUser = userService.login(user.getUsername(), user.getPassword());
@@ -85,11 +81,7 @@ public class LoginController {
 
 
     // @GetMapping("/home2")
-<<<<<<< HEAD
-    // public String home2(){
-    //     return "home2";
-    // }
-=======
+
     // public String showhome2(Model model){
     // User user = userService2.;
 
@@ -98,16 +90,13 @@ public class LoginController {
     // return "home2";
     // }
 
-    @GetMapping("/home2/{id}")
-    public String showhome2(@PathVariable int id, Model model) {
-        Login login = userService.getById(id);
+    // @GetMapping("/home2/{id}")
+    // public String showhome2(@PathVariable int id, Model model) {
+    //     Login login = userService.getById(id);
         
-        model.addAttribute("login", login);
+    //     model.addAttribute("login", login);
         
-        return "home2";
+    //     return "home2";
         
-    }
-
-    
->>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
+    // }
 }

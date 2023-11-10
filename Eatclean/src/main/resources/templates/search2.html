@@ -13,64 +13,43 @@
         function findBook() {
             let keywordInput = document.querySelector(".input100");
             let keyword = keywordInput.value;
-<<<<<<< HEAD
             window.location = "/search?keyword=" + keyword;
-=======
-            window.location.href = /*[[@{'/search2/' + login.id + '?keyword=' + keyword}]]*/'';
-
->>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
+            // window.location.href = /*[[@{'/search2/' + login.id + '?keyword=' + keyword}]]*/'';
         }
     </script>
 </head>
 <body>
     <section class="page1">
         <nav class="navbar container">
-<<<<<<< HEAD
-            <a href="#"><img src="https://eatcleanmealprep.com/wp-content/uploads/2020/11/eat-clean-meal-prep-logo.png" alt=""></a>
-=======
-            <a th:href="@{/home2/{id}(id=${login.id})}">
-                <img th:src="@{/static/img/home/ho.png}" alt="" />
-              </a>     
->>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">About BMI</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-<<<<<<< HEAD
+          <a th:href="@{/home2/{id}(id=${login.id})}">
+            <img th:src="@{/static/img/home/ho.png}" alt="" />
+        </a>    
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="products">Menu</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About BMI</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <ul>
             <div class="logo">
-                <a href="login">Me</a>
-                <a href="#">My Cart</a>
-                <a href="#">My To-Do-List</a>
+                <a th:href="@{/canhan/{id}(id=${login.id})}">Me</a>
+                <a th:href="@{/search2/{id}(id=${login.id})}">Search</a>
+                <a th:href="@{/gio_hang/{id}(id=${login.id})}">My Cart</a> 
+                <a th:href="@{/login}">Logout</a> <!-- Thêm đoạn này để dẫn đến trang login -->
             </div>
-        </nav>
-        <div style="display: flex; margin-top: 300px;">
-            <div class="text container" style="width: 500px; margin-left: 100px;">
-=======
-            <ul>
-                <div class="logo">
-                    <a th:href="@{/canhan/{id}(id=${login.id})}">Me</a>
-                    <a th:href="@{/search2/{id}(id=${login.id})}">Search</a>
-                    <a th:href="@{/gio_hang/{id}(id=${login.id})}">My Cart</a> 
-                    <a th:href="@{/login}">Login</a> <!-- Thêm đoạn này để dẫn đến trang login -->
-                </div>
-            </ul>
+        </ul>
+        
         </nav>
         <div style="display: flex;">
             <div class="text container" style="width: 500px; margin-left: 100px; margin-top: 300px;">
->>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
                 <p>Welcome to </p>
                 <h1>EatClean Shop</h1>
                 <a href="#" class="btn">learn more</a>
             </div>
-<<<<<<< HEAD
             <div class="find">
-=======
             <div class="find" style="margin-top: 350px;">
->>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
                 <input class="input100" type="text" name="keyword" placeholder="Nhập thực đơn, đồ ăn cần tìm" style="font-size: 15pt;">
                 <button class="timkiem" type="button" onclick="findBook()"></button>
             </div>

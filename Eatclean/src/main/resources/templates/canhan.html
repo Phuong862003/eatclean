@@ -246,20 +246,17 @@
                 </div>
                 <div th:each="user: ${user}" class="col-12 col-lg-9 col-md-9 col-sm-8 profileRight">
                     <div id="profileContent">
-<<<<<<< HEAD
-                        <h3 th:text="${user.name}"></h3>
-=======
+
+
                         <h3>
                             <span th:text="${user.name}" aria-hidden="true"></span>
                         </h3>
->>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
+
                         <p>
                             <b>
                                 Email:
                             </b> 
-<<<<<<< HEAD
-                            <label th:text="${user.email}"></label>
-=======
+
                             <span th:text="${user.email}" aria-hidden="true"></span>
                         </p>
                         <p>
@@ -272,7 +269,7 @@
                             <b>
                                 Địa chỉ:
                             </b>
->>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
+
                         </p>
                         <a href="/profile/edit" class="btn btn-use">
                             Sửa

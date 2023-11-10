@@ -17,14 +17,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     List<User> findByNameContaining(String name);
 
     Optional<User> findById(int id);
-<<<<<<< HEAD
-    User findByLoginId(int loginId);
-=======
 
     User findByLoginId(int loginId);
 
-
-    
-
->>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
 }

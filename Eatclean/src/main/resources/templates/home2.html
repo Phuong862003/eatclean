@@ -9,122 +9,6 @@
     <title>EATCLEAN</title>
 </head>
 <body>
-<<<<<<< HEAD
-  <section class="page1">
-    <nav class="navbar container">
-      <a th:href="@{/home2/{id}(id=${login.id})}">
-        <img th:src="@{/static/img/home/ho.png}" alt="" />
-      </a>    
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="products">Menu</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">About BMI</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul>
-        <div class="logo">
-            <a th:href="@{/canhan/{id}(id=${login.id})}">Me</a>
-            <a th:href="@{/search2/{id}(id=${login.id})}">Search</a>
-            <a th:href="@{/gio_hang/{id}(id=${login.id})}">My Cart</a> 
-            <a th:href="@{/login}">Login</a> <!-- Thêm đoạn này để dẫn đến trang login -->
-=======
-<<<<<<< HEAD
-    <section class="page1">
-        <nav class="navbar container">
-            <a href="#"><img src="https://eatcleanmealprep.com/wp-content/uploads/2020/11/eat-clean-meal-prep-logo.png" alt=""></a>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">About BMI</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <ul th:each="login : ${login}">
-              <div class="logo">
-                <a th:href="@{/canhan/{id}(id=${login.id})}">Me</a>
-                <a href="#">My Cart</a>
-                <a th:href="@{/search2/{id}(id=${login.id})}">My To-Do-List</a>
-
-              </div>
-            </ul>
-            <!-- <div class="logo">
-              <a href="search">My To-Do-List</a>
-            </div> -->
-            
-        </nav>
-        <div class="text container">
-            <p>Welcome to </p>
-            <h1>EatClean Shop</h1>
-            <a href="#" class="btn">learn more</a>
->>>>>>> 1b5d0a9f7bd0c52b65379abf07bb7b7905036f92
-        </div>
-    </section>
-    <section id="products" class="page2">
-        <h2>Our Products</h2>
-        <div class="horizontal-scroll-container">
-          <!-- <div class="product">
-            <img src="product1" alt="Product 1">
-            <h3>Product 1</h3>
-            <p>Description of Product 1.</p>
-            <a href="#">Add to Cart</a>
-          </div>
-          <div class="product">
-            <img src="product2.jpg" alt="Product 2">
-            <h3>Product 2</h3>
-            <p>Description of Product 2.</p>
-            <a href="#">Add to Cart</a>
-          </div>
-          <div class="product">
-            <img src="product3.jpg" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>Description of Product 3.</p>
-            <a href="#">Add to Cart</a>
-          </div>
-          <div class="product">
-            <img src="product3.jpg" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>Description of Product 3.</p>
-            <a href="#">Add to Cart</a>
-          </div>
-          <div class="product">
-            <img src="product3.jpg" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>Description of Product 3.</p>
-            <a href="#">Add to Cart</a>
-          </div>
-          <div class="product">
-            <img src="product3.jpg" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>Description of Product 3.</p>
-            <a href="#">Add to Cart</a>
-          </div>
-          <div class="product">
-            <img src="product3.jpg" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>Description of Product 3.</p>
-            <a href="#">Add to Cart</a>
-          </div>
-          <div class="product">
-            <img src="product3.jpg" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>Description of Product 3.</p>
-            <a href="#">Add to Cart</a>
-          </div>
-          <div class="product">
-            <img src="product3.jpg" alt="Product 3">
-            <h3>Product 3</h3>
-            <p>Description of Product 3.</p>
-            <a href="#">Add to Cart</a>
-          </div> -->
-          <div class="controls">
-            <button id="scroll-left" onclick="scrollLeft()">←</button>
-            <button id="scroll-right" onclick="scrollRight()">→</button>
-          </div>
-          <!-- Add more product divs as needed -->
-=======
   <section class="page1">
     <nav class="navbar container">
       <a th:href="@{/home2/{id}(id=${login.id})}">
@@ -143,7 +27,7 @@
             <a th:href="@{/canhan/{id}(id=${login.id})}">Me</a>
             <a th:href="@{/search2/{id}(id=${login.id})}">Search</a>
             <a th:href="@{/gio_hang/{id}(id=${login.id})}">My Cart</a> 
-            <a th:href="@{/login}">Login</a> <!-- Thêm đoạn này để dẫn đến trang login -->
+            <a th:href="@{/login}">Logout</a> <!-- Thêm đoạn này để dẫn đến trang login -->
         </div>
     </ul>
     
@@ -167,7 +51,6 @@
           <div class="add-to-cart">
             <img src="/static/img/home/cart-icon.png" alt="Cart Icon">
           </div>
->>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
         </div>
         <div class="product-info">
           <h3 th:text="${product.name}">Product Name</h3>
