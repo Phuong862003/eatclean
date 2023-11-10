@@ -21,15 +21,18 @@
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
-            <div class="logo">
-                <ul th:each="user : ${user}">
-                    <li>
-                        <a th:href="@{/canhan/{id}(id=${user.id})}">Me</a>
-                    </li>
-                </ul>
+            <ul th:each="login : ${login}">
+              <div class="logo">
+                <a th:href="@{/canhan/{id}(id=${login.id})}">Me</a>
                 <a href="#">My Cart</a>
-                <a href="search">My To-Do-List</a>
-            </div>
+                <a th:href="@{/search2/{id}(id=${login.id})}">My To-Do-List</a>
+
+              </div>
+            </ul>
+            <!-- <div class="logo">
+              <a href="search">My To-Do-List</a>
+            </div> -->
+            
         </nav>
         <div class="text container">
             <p>Welcome to </p>
@@ -40,7 +43,7 @@
     <section id="products" class="page2">
         <h2>Our Products</h2>
         <div class="horizontal-scroll-container">
-          <div class="product">
+          <!-- <div class="product">
             <img src="product1" alt="Product 1">
             <h3>Product 1</h3>
             <p>Description of Product 1.</p>
@@ -93,7 +96,7 @@
             <h3>Product 3</h3>
             <p>Description of Product 3.</p>
             <a href="#">Add to Cart</a>
-          </div>
+          </div> -->
           <div class="controls">
             <button id="scroll-left" onclick="scrollLeft()">←</button>
             <button id="scroll-right" onclick="scrollRight()">→</button>

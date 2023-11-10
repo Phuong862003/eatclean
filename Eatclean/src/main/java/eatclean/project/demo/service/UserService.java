@@ -1,5 +1,7 @@
 package eatclean.project.demo.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,11 +42,13 @@ public class UserService {
         userRepository.save(newUser);
     }
 
-    public User getLoginId(int id){
-        return userRepository.findByLoginId(id).get(id);
+    public User getUserByLoginId(int loginId) {
+        return userRepository.findByLoginId(loginId);
     }
 
     public User getUserById(int id){
         return userRepository.findById(id).get();
     }
+
+    
 }

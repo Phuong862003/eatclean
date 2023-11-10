@@ -16,7 +16,7 @@ public class ProfileController {
 
     @GetMapping("/canhan/{id}")
     public String userProfile(@PathVariable int id, Model model){
-        User user = userService.getLoginId(id);
+        User user = userService.getUserByLoginId(id);
         model.addAttribute("user", user); 
         return "canhan";
     }

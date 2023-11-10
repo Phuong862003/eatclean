@@ -245,25 +245,12 @@
                 </div>
                 <div class="col-12 col-lg-9 col-md-9 col-sm-8 profileRight">
                     <div id="profileContent">
-                        <h3>
-                            ABC
-                        </h3>
+                        <h3 th:text="${user.name}"></h3>
                         <p>
                             <b>
                                 Email:
                             </b> 
-                            nt156969@gmail.com
-                        </p>
-                        <p>
-                            <b>
-                                Điện thoại:
-                            </b> 
-                            0123456789
-                        </p>
-                        <p>
-                            <b>
-                                Địa chỉ:
-                            </b>
+                            <label th:text="${user.email}"></label>
                         </p>
                         <a href="/profile/edit" class="btn btn-use">
                             Sửa

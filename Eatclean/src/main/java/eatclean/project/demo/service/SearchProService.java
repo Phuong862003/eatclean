@@ -28,6 +28,7 @@ public class SearchProService {
                 }else{
                     imageUrl="https://znews-photo.zingcdn.me/w660/Uploaded/natmts/2023_02_03/z4080571344877_dcc05eb033d9e910039ad77df6eb1b05.jpg";
                 }
+                
                 product.setImage(imageUrl);
             }
             return products;
@@ -48,5 +49,9 @@ public class SearchProService {
     }
     private String processImageUrl(String imageUrl) {
         return null;
+    }
+
+    public Products getById(int id){
+        return productsRepository.findById(id).get();
     }
 }

@@ -43,7 +43,6 @@ public class LoginController {
         return mav;
     }
 
-    
 
     @PostMapping("/login")
     public ModelAndView login(@ModelAttribute("user") Login user) {
@@ -55,7 +54,8 @@ public class LoginController {
             if ("admin".equals(oauthUser.getRole()) || "ADMIN".equals(oauthUser.getRole())) {
                 modelAndView.setViewName("redirect:/thongke/");
             } else {
-                modelAndView.setViewName("redirect:/home2");
+                int userID = oauthUser.getId();
+                modelAndView.setViewName("redirect:/home2/" + userID);
             }
         } else {
             modelAndView.addObject("error", true);
@@ -65,17 +65,20 @@ public class LoginController {
         return modelAndView;
     }
 
+    
+    @GetMapping("/home2/{id}")
+    public String showhome2(@PathVariable int id, Model model) {
+        Login login = userService.getById(id);
+        // User user = userService2.getUserById(id);
+        model.addAttribute("login", login);
+        // model.addAttribute("user", user);
+        return "home2";
+        
+    }
+
+
     // @GetMapping("/home2")
-    // public String showhome2(Model model){
-    //     User user = userService2.;
-        
-    //     model.addAttribute("user", user);
-        
+    // public String home2(){
     //     return "home2";
     // }
-
-    @GetMapping("/home2")
-    public String home2(){
-        return "home2";
-    }
 }
