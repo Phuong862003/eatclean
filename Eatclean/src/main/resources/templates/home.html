@@ -13,6 +13,82 @@
       th:href="@{https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css}"
     />
     <title>EATCLEAN</title>
+    <style>
+      .chatbox {
+        position: fixed;
+        bottom: 60px;
+        right: 20px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        font-size: 16px;
+      }
+    
+      .closed {
+        transform: translateY(100%);
+      }
+    
+      .chat-header {
+        background-color: rgba(32, 32, 32, 0.8); 
+        color: #fff;
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    
+      .toggle-btn, .close-btn {
+        font-size: 24px;
+        cursor: pointer;
+      }
+    
+      .chat-title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    
+      .chat-content {
+        height: 200px;
+        padding: 10px;
+        overflow-y: scroll;
+        border-bottom: 1px solid #ccc;
+      }
+    
+      .user-input-container {
+        display: flex;
+        padding: 10px;
+        background-color: #f9f9f9;
+      }
+    
+      .user-input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+      }
+    
+      .send-btn {
+        padding: 10px;
+        border: none;
+        background-color:rgba(32, 32, 32, 0.8); 
+        color: #fff;
+        cursor: pointer;
+      }
+    
+      .bot-message {
+        background-color: #f2f2f2;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+      }
+    </style>
+    
+    
+    
   </head>
   <body>
     <section class="page1">
@@ -116,6 +192,83 @@
       <a href="">SUPPLIERS</a>
     </footer>
 
+
+    <div id="chatbox" class="chatbox closed">
+      <div id="chat-header" class="chat-header">
+        <span id="toggle-btn" class="toggle-btn">&#9650;</span>
+        <div id="chat-title" class="chat-title">EatClean Shop</div>
+
+        <span id="close-btn" class="close-btn">&#10005;</span>
+      </div>
+      <div id="chat-content" class="chat-content"></div>
+      <div id="user-input-container" class="user-input-container">
+        <input type="text" id="user-input" class="user-input" placeholder="Type your message..." />
+        <button id="send-btn" class="send-btn">Send</button>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const chatbox = document.getElementById("chatbox");
+        const toggleBtn = document.getElementById("toggle-btn");
+        const closeBtn = document.getElementById("close-btn");
+        const chatContent = document.getElementById("chat-content");
+        const userInput = document.getElementById("user-input");
+        const sendBtn = document.getElementById("send-btn");
+
+        function toggleChatbox() {
+          chatbox.classList.toggle("closed");
+          const icon = chatbox.classList.contains("closed") ? "&#9650;" : "&#9660;";
+          toggleBtn.innerHTML = icon;
+        }
+
+        function appendMessage(message, isUser) {
+          const messageElement = document.createElement("div");
+          messageElement.className = isUser ? "user-message" : "bot-message";
+          messageElement.textContent = message;
+          chatContent.appendChild(messageElement);
+
+          chatContent.scrollTop = chatContent.scrollHeight;
+        }
+
+        function handleUserInput() {
+          const userMessage = userInput.value.trim();
+          if (userMessage !== "") {
+            appendMessage(`You: ${userMessage}`, true);
+            userInput.value = "";
+
+            setTimeout(() => {
+              let botMessage = "";
+              switch (userMessage.toLowerCase()) {
+                case "hi":
+                case "hello":
+                  botMessage = "Bot: Hi there! How can I assist you today?";
+                  break;
+                case "menu":
+                  botMessage = "Bot: You can view our menu on the 'Menu' page.";
+                  break;
+                case "specials":
+                  botMessage = "Bot: Check out our special offers on the 'Specials' page.";
+                  break;
+                default:
+                  botMessage = "Bot: I'm sorry, I didn't understand that. How can I help you?";
+              }
+
+              appendMessage(botMessage, false);
+            }, 500);
+          }
+        }
+
+        toggleBtn.addEventListener("click", toggleChatbox);
+        closeBtn.addEventListener("click", toggleChatbox);
+        sendBtn.addEventListener("click", handleUserInput);
+        userInput.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            handleUserInput();
+          }
+        });
+      });
+    </script>
     <script src="/static/script.js"></script>
   </body>
 </html>
