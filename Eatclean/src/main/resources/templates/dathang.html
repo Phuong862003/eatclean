@@ -45,9 +45,11 @@
         <div style="height: 1000px;">
             <section class="page1" >
                 <nav class="navbar container">
-                  <a th:href="@{/home2/{id}(id=${login.id})}">
-                    <img th:src="@{/static/img/home/ho.png}" alt="" />
-                  </a>    
+                  <ul th:each="login:${login}">
+                    <a th:href="@{/home2/{id}(id=${login.id})}">
+                        <img th:src="@{/static/img/home/ho.png}" alt="" />
+                      </a>  
+                  </ul>  
                   <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="products">Menu</a></li>
@@ -57,7 +59,7 @@
                     <li><a href="#">Contact</a></li>
                   </ul>
                   <ul>
-                    <div class="logo">
+                    <div class="logo" th:each="login:${login}">
                         <a th:href="@{/canhan/{id}(id=${login.id})}">Me</a>
                         <a th:href="@{/search2/{id}(id=${login.id})}">Search</a>
                         <a th:href="@{/gio_hang/{id}(id=${login.id})}">My Cart</a> 

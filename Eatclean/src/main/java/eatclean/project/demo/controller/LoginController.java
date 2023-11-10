@@ -54,7 +54,8 @@ public class LoginController {
 
         if (Objects.nonNull(oauthUser)) {
             if ("admin".equals(oauthUser.getRole()) || "ADMIN".equals(oauthUser.getRole())) {
-                modelAndView.setViewName("redirect:/products");
+                // int userID = oauthUser.getId();
+                modelAndView.setViewName("redirect:/thongke" );
             } else {
                 int userID = oauthUser.getId();
                 modelAndView.setViewName("redirect:/home2/" + userID);
