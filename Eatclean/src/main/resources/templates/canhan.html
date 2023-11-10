@@ -35,13 +35,13 @@
     </head>
     <body id="lama-theme" class="tp_background tp_text_color"> 
         <input type="hidden" id="checkStoreId" value="71503">
-        <div id="content">
+        <!-- <div id="content">
             <div id="menu">
                 <ul>
-                    <li class="selected text-center">
-                        <a href="/">
-                            <img src="C:\Users\84973\Downloads\logoPage (1).png" alt="Logo">
-                        </a>
+                    <li class="selected text-center" >
+                        <a th:href="@{/home2/{id}(id=${login.id})}">
+                            <img th:src="@{/static/img/home/ho.png}" alt="" />
+                        </a>    
                     </li>
                     <li class="mobile_child">
                         <a href="/" title="Trang chủ" class=" current">
@@ -59,7 +59,7 @@
                         </a>
                     </li>
                 </ul>
-            </div>
+            </div> -->
             <header class="tp_header">
                 <div class="header-content">
                     <div class="d-flex d-lg-none flex-wrap header_mobile">
@@ -115,27 +115,27 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container top-header d-none d-lg-flex flex-wrap">
+                    <div class="container top-header d-none d-lg-flex flex-wrap" style="background-color: #333; max-width: 1000px;">
                         <div class="col-md-2 lare-logo">
-                            <a href="/" class="d-inline-block">
-                                <img src="C:\Users\84973\Downloads\logoPage (1).png" alt="Logo">
-                            </a>
+                            <a th:href="@{/home2/{id}(id=${login.id})}">
+                                <img th:src="@{/static/img/home/ho.png}" alt="" />
+                            </a> 
                         </div>
                         <div class="col-md-8 menu-item">
                             <ul class="nav nav-pills header_menu tp_menu">
                                 <li class="tp_menu_item">
-                                    <a class="tp_menu_item" href="/" title="Trang chủ">
+                                    <a class="tp_menu_item" href="/" title="Trang chủ" style="color: antiquewhite;">
                                         Trang chủ 
                                     </a>
                                 </li>
                                 <li class="tp_menu_item"> 
-                                    <a class="tp_menu_item" href="/san-pham-pc564206.html" title="Sản phẩm">
+                                    <a class="tp_menu_item" href="/san-pham-pc564206.html" title="Sản phẩm" style="color: antiquewhite;">
                                         Sản phẩm
                                         <span class="caret"></span>
                                     </a>
                             </li>
                             <li class="tp_menu_item">
-                                <a class="tp_menu_item" href="/lien-he" title="Liên hệ">
+                                <a class="tp_menu_item" href="/lien-he" title="Liên hệ" style="color: antiquewhite;">
                                     Liên hệ 
                                 </a>
                             </li>
@@ -186,8 +186,9 @@
             </div>
         </header>
         <link rel="stylesheet" href="https://web.nvnstatic.net/tp/T0307/css/user.css?v=2" type="text/css">
-        <div class="bread-crumb text-center bread-crumb_background" style=" background-image: url('https://pos.nvncdn.net/16a837-71503/bn/20220325_5UxI8S76E0NIJxh0znPFxEOw.png');">
-            <h3>
+        <div class="bread-crumb text-center bread-crumb_background" style=" background-image: url('https://media.istockphoto.com/id/1095313322/vi/anh/s%E1%BB%91t-c%C3%A0-chua-v%E1%BB%9Bi-c%C3%A1c-nguy%C3%AAn-li%E1%BB%87u.jpg?s=2048x2048&w=is&k=20&c=nSnosO9NfsSd5NQbjE9_bKec_FVbhvBhzqs_0BXLzxs=');
+                                                                        width: 100%; height: 600px;">
+            <h3 style="color: antiquewhite;">
                 Profile
             </h3>
             <ul class="breadcrumb&#x20;breadcrumb-arrow">
@@ -243,14 +244,35 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-9 col-md-9 col-sm-8 profileRight">
+                <div th:each="user: ${user}" class="col-12 col-lg-9 col-md-9 col-sm-8 profileRight">
                     <div id="profileContent">
+<<<<<<< HEAD
                         <h3 th:text="${user.name}"></h3>
+=======
+                        <h3>
+                            <span th:text="${user.name}" aria-hidden="true"></span>
+                        </h3>
+>>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
                         <p>
                             <b>
                                 Email:
                             </b> 
+<<<<<<< HEAD
                             <label th:text="${user.email}"></label>
+=======
+                            <span th:text="${user.email}" aria-hidden="true"></span>
+                        </p>
+                        <p>
+                            <b>
+                                Điện thoại:
+                            </b> 
+                            0123456789
+                        </p>
+                        <p>
+                            <b>
+                                Địa chỉ:
+                            </b>
+>>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
                         </p>
                         <a href="/profile/edit" class="btn btn-use">
                             Sửa

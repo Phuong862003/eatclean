@@ -59,7 +59,9 @@ public class Categories {
     }
 
     public Categories(int id, String name, String status, int sort, String metaKeywords, String metaDescriptions,
-            int createdBy, String createdDate, int updateBy, String updateDate, List<Products>products) {
+
+            int createdBy, String createdDate, int updateBy, String updateDate, List<Products> products) {
+
         this.id = id;
         this.name = name;
         this.status = status;
@@ -70,7 +72,7 @@ public class Categories {
         this.createdDate = createdDate;
         this.updateBy = updateBy;
         this.updateDate = updateDate;
-        this.products=products;
+        this.products = products;
     }
 
     public int getId() {
@@ -160,7 +162,4 @@ public class Categories {
     public void setProducts(List<Products> products) {
         this.products = products;
     }
-
-    
-
 }

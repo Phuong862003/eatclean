@@ -17,8 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import org.springframework.ui.Model;
 import eatclean.project.demo.enity.Login;
+import eatclean.project.demo.enity.Products;
 import eatclean.project.demo.enity.User;
 import eatclean.project.demo.service.LoginService;
+import eatclean.project.demo.service.SearchProService;
 import eatclean.project.demo.service.UserService;
 
 @Controller
@@ -29,21 +31,25 @@ public class LoginController {
     @Autowired
     private UserService userService2;
 
+    @Autowired
+    private SearchProService searchProService;
+
     @GetMapping("/")
-    public String home(){
+    public String home() {
         return "home";
     }
 
-    
-
-    @GetMapping("/login")        
+    @GetMapping("/login")
     public ModelAndView login() {
         ModelAndView mav = new ModelAndView("login");
         mav.addObject("user", new Login());
         return mav;
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
     @PostMapping("/login")
     public ModelAndView login(@ModelAttribute("user") Login user) {
         Login oauthUser = userService.login(user.getUsername(), user.getPassword());
@@ -52,7 +58,7 @@ public class LoginController {
 
         if (Objects.nonNull(oauthUser)) {
             if ("admin".equals(oauthUser.getRole()) || "ADMIN".equals(oauthUser.getRole())) {
-                modelAndView.setViewName("redirect:/thongke/");
+                modelAndView.setViewName("redirect:/products");
             } else {
                 int userID = oauthUser.getId();
                 modelAndView.setViewName("redirect:/home2/" + userID);
@@ -78,7 +84,29 @@ public class LoginController {
 
 
     // @GetMapping("/home2")
+<<<<<<< HEAD
     // public String home2(){
     //     return "home2";
     // }
+=======
+    // public String showhome2(Model model){
+    // User user = userService2.;
+
+    // model.addAttribute("user", user);
+
+    // return "home2";
+    // }
+
+    @GetMapping("/home2/{id}")
+    public String showhome2(@PathVariable int id, Model model) {
+        Login login = userService.getById(id);
+        
+        model.addAttribute("login", login);
+        
+        return "home2";
+        
+    }
+
+    
+>>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
 }

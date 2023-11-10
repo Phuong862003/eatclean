@@ -40,24 +40,6 @@ public class Products {
     @Column(name = "quantity")
     private int quantity;
 
-    @Column(name = "metaKeywords")
-    private String metaKeywords;
-
-    @Column(name = "metaDescriptions")
-    private String metaDescriptions;
-
-    // @Column(name = "createdBy")
-    // private Integer createdBy;
-
-
-    // @Column(name = "createdDate")
-    // private String createdDate;
-
-    // @Column(name = "updateBy")
-    // private int updateBy;
-
-    // @Column(name = "updateDate")
-    // private String updateDate;
 
     public Products() {
         // super();
@@ -72,7 +54,7 @@ public class Products {
     // }
 
     public Products(int id, String name, String status, String description, float price, String image,
-            Categories categories, int quantity, String metaKeywords, String metaDescriptions) {
+            Categories categories, int quantity) {
         this.id = id;
         this.name = name;
         this.status = status;
@@ -81,9 +63,7 @@ public class Products {
         this.image = image;
         this.categories = categories;
         this.quantity = quantity;
-        this.metaKeywords = metaKeywords;
-        this.metaDescriptions = metaDescriptions;
-        
+
     }
 
     public int getId() {
@@ -150,24 +130,10 @@ public class Products {
         this.categories = categories;
     }
 
-    public String getMetaKeywords() {
-        return metaKeywords;
+
+
+    public void setCategory(Object findById) {
     }
 
-    public void setMetaKeywords(String metaKeywords) {
-        this.metaKeywords = metaKeywords;
-    }
-
-    public String getMetaDescriptions() {
-        return metaDescriptions;
-    }
-
-    public void setMetaDescriptions(String metaDescriptions) {
-        this.metaDescriptions = metaDescriptions;
-    }
-
-   
-
-    
 
 }
