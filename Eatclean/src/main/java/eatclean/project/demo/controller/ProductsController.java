@@ -1,5 +1,6 @@
 package eatclean.project.demo.controller;
 
+import java.security.Principal;
 import java.util.List;
 import eatclean.project.demo.enity.Products;
 
@@ -28,12 +29,40 @@ public class ProductsController {
         // super();
         this.productsFormService = productsFormService;
     }
-    @GetMapping("/home")
-    public String show_Products( Model model) {
-        List<Products> products = productsFormService.show_Products();
-        model.addAttribute("products", products);
-        return "home";
-    }
+
+    // @GetMapping("/home")
+    // public String showProducts(Model model, Principal principal) {
+    //     List<Products> products = productsFormService.show_Products();
+    //     model.addAttribute("products", products);
+    
+    //     // Lấy thông tin người dùng đang đăng nhập
+    //     String loggedInId = principal != null ? principal.getName() : null;
+    //     model.addAttribute("id", loggedInId);
+        
+    //     return "home";
+    // }
+    
+    // @GetMapping("/home2/{id}")
+    // public String showProductsById(@PathVariable("id") Long id, Model model) {
+    //     List<Products> products = productsFormService.show_Products();
+    //     model.addAttribute("products", products);
+        
+    //     return "home2";
+    // }
+//     @GetMapping("/home2/{id}")
+// public String showProductsById(@PathVariable("id") String id, Model model) {
+//     List<Products> products = productsFormService.show_Products();
+//     model.addAttribute("products", products);
+//     model.addAttribute("id", id);
+    
+//     return "home2";
+// }
+
+
+
+
+
+
     @GetMapping("/products")
     public String search_products(@RequestParam(name = "keyword", required = false) String keyword, Model model) {
         List<Products> products = productsFormService.search_products(keyword);

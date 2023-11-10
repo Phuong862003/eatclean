@@ -20,7 +20,10 @@ public class ProfileController {
     private LoginService loginService;
     @GetMapping("/canhan/{id}")
     public String userProfile(@PathVariable int id, Model model){
+<<<<<<< HEAD
+=======
         Login login = loginService.getById(id);
+>>>>>>> 07abb4679499e83b6dcc95712cf8ba82ce08c2a1
         User user = userService.getUserByLoginId(id);
         model.addAttribute("user", user); 
         model.addAttribute("login", login);
